@@ -1,7 +1,7 @@
 export const CargoPage = () => {
   return (
     <>
-      <>CargoPage</>
+      <>CargoPage 1</>
     </>
   );
 };

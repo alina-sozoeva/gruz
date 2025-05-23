@@ -18,6 +18,15 @@ app.get("/", function (req, res) {
   res.render("index.hbs");
 });
 
+app.get("/add_gruz", function (req, res) {
+  res.render("add_gruz.hbs");
+});
+
+app.get("/archive", function (req, res) {
+  res.render("archive.hbs");
+});
+
+
 app.listen(PORT, () => {
   console.log(`🔥 Сервер работает на http://localhost:${PORT}`);
 });

@@ -1,0 +1,631 @@
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo/shortcut.png" />
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/animate.min.css" />
+  <link rel="stylesheet" href="css/magnific-popup.css" />
+  <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="css/dripicons.css" />
+  <link rel="stylesheet" href="css/slick.css" />
+  <link rel="stylesheet" href="css/meanmenu.css" />
+  <link rel="stylesheet" href="css/aos.css" />
+  <link rel="stylesheet" href="css/swiper.min.css" />
+  <link rel="stylesheet" href="css/default.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+</head>
+
+<body>
+  <main class="pt-105">
+    <!-- Header -->
+    <header class="header">
+      <div class="nav">
+        <a href="" style="background-color: transparent; color: #2277cc;">
+          <i class="fa-solid fa-box"></i>
+          Все сервисы
+        </a>
+        <div>
+          <a href="/">
+            <i class="fa-solid fa-box"></i>
+            Ваши грузы
+          </a>
+          <a href="/add_gruz">
+            <i class="fa-solid fa-circle-plus"></i>
+            Добавить груз
+          </a>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-user fs-3"></i>
+        <div class="d-flex flex-column ms-3 me-2">
+          <span class="fw-bold" style="font-size: 12px;">username</span>
+          <span style="font-size: 12px;">Бесплатный</span>
+        </div>
+      </div>
+    </header>
+    <div>
+      <div style="background-color: #f9f9fa; padding: 50px 0;">
+        <div class="container">
+          <!-- Page Content -->
+          <section>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center justify-content-between" style="width: 70%;">
+                <h2>Добавить груз</h2>
+                <div>
+                  <button class="form-btn" style="text-transform: uppercase;">
+                    Заполнить из шаблона
+                  </button>
+                  <button class="form-btn" style="text-transform: uppercase;">
+                    Очистить форму
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end" style="width: 30%;">
+                <div class="d-flex align-items-center">
+                  <span class="me-2">Тёмная тема</span>
+                  <div class="form-check form-switch" style="min-height: 0;">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="mt-4" style="width: 70%; background-color: white; padding: 20px; border-radius: 10px">
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Груз</h4>
+                  </div>
+
+                  <div style="width: 70%;" class="d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
+                      <div>
+                        <input type="text" class="form-control" placeholder="Введите описание груза"
+                          style="font-size: 12px; width: 220px" />
+                      </div>
+                      <div>
+                        <input type="text" class="form-control" placeholder="Вес" style="font-size: 12px; width:70px" />
+                      </div>
+                      <div>
+                        <select name="select" style="height: 32px; border: 1px solid #ced4da; width:70px">
+                          <option value="value1" selected>т</option>
+                          <option value="value2">кг</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <input type="text" class="form-control" placeholder="Объём м³"
+                          style="font-size: 12px; width: 85px" />
+                      </div>
+                      <span class="form-label" style="font-size: 12px; color: #838b94; line-height: 1.2;">В
+                        расчёте на одну машину</span>
+                    </div>
+
+                    <div class="mb-3">
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Упаковка и кол-во
+                      </button>
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Габариты и диаметр
+                      </button>
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Еще груз
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Когда</h4>
+                  </div>
+
+                  <div style="width: 70%;" class="d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
+                      <div>
+                        <select name="select"
+                          style="height: 32px; border: 1px solid #ced4da; width:220px; font-size: 12px;">
+                          <option value="value1" selected>Готов к загрузке</option>
+                          <option value="value2">Постоянно</option>
+                          <option value="value2">Груза нет, запрос ставки</option>
+                        </select>
+                      </div>
+                      <div>
+                        <input type="date" class="form-control" placeholder="Вес"
+                          style="font-size: 12px; width:120px" />
+                      </div>
+                      +
+                      <div>
+                        <select name="select"
+                          style="height: 32px; border: 1px solid #ced4da; width:70px; font-size: 12px;">
+                          <option value="value1" selected>0 дн.</option>
+                          <option value="value2">1 дн.</option>
+                          <option value="value3">2 дн.</option>
+                        </select>
+                      </div>
+                      <span class="form-label" style="font-size: 12px; color: #838b94; line-height: 1.2;">до 23 мая,
+                        затем переместится в архив</span>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Загрузка</h4>
+                  </div>
+
+                  <div style="width: 70%;" class="d-flex flex-column">
+                    <div class="d-flex align-items-center mb-2" style="gap: 10px">
+                      <div>
+                        <input type="text" class="form-control" placeholder="Населенный пункт"
+                          style="font-size: 12px; width: 220px" />
+                      </div>
+                      <div>
+                        <input type="text" class="form-control" placeholder="Адрес в населённом пункте"
+                          style="font-size: 12px; width: 220px" />
+                      </div>
+                      <span class="form-label"
+                        style="font-size: 12px; color: #838b94; line-height: 1.2; margin-bottom: 0">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-bars"></i>
+                      </span>
+                    </div>
+                    <div class="mb-3">
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Время загрузки
+                      </button>
+                    </div>
+                    <div class="mb-3 d-flex" style="font-size: 12px;">
+                      <span>Добавить точку маршрута:</span>
+                      <div class="ms-2" style="color: #2277cc;">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Загрузка</span>
+                      </div>
+                      <div class="ms-2" style="color: #2277cc;">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Разгрузка</span>
+                      </div>
+                      <div class="ms-2" style="color: #2277cc;">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Ехать через</span>
+                      </div>
+                      <div class="ms-2" style="color: #2277cc;">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Таможня</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 d-flex justify-content-between">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Разгрузка</h4>
+                  </div>
+
+                  <div style="width: 70%;" class="d-flex flex-column">
+                    <div class="d-flex align-items-center mb-2" style="gap: 10px">
+                      <div>
+                        <input type="text" class="form-control" placeholder="Населенный пункт"
+                          style="font-size: 12px; width: 220px" />
+                      </div>
+                      <div>
+                        <input type="text" class="form-control" placeholder="Адрес в населённом пункте"
+                          style="font-size: 12px; width: 220px" />
+                      </div>
+                      <span class="form-label"
+                        style="font-size: 12px; color: #838b94; line-height: 1.2; margin-bottom: 0">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-bars"></i>
+                      </span>
+                    </div>
+                    <div class="mb-3">
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Дата и время
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 d-flex justify-content-between">
+                  <div class="d-flex">
+                    <h4 class="ms-2" style="width: 20%; font-size: 14px;">Маршрут</h4>
+                  </div>
+                  <div style="width: 70%; gap: 5px" class="d-flex align-items-center">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <span style="color: #b5babf; font-size: 12px">кругорейс</span>
+                    <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="row" style="width: 100%;">
+                  <div class="d-flex justify-content-between flex-column col">
+                    <div class="d-flex">
+                      <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                      <h4 class="ms-2" style="font-size: 14px; font-weight: 700;">Когда</h4>
+                    </div>
+                    <div class="car-carcase">
+                      <div>
+                        <input type="text" class="form-control" placeholder="Поиск" style="font-size: 12px;" />
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between flex-column col">
+                    <div class="d-flex justify-content-between" style="font-size: 12px">
+                      <span>Загрузка</span>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span style="color: #b5babf">учитывать все выбранные</span>
+                      </div>
+                    </div>
+                    <div class="car-carcase">
+                      <div>
+                        <input type="text" class="form-control" placeholder="Поиск" style="font-size: 12px;" />
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between flex-column col">
+                    <div class="d-flex justify-content-between" style="font-size: 12px">
+                      <span>Выгрузка</span>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span style="color: #b5babf">учитывать все выбранные</span>
+                      </div>
+                    </div>
+                    <div class="car-carcase">
+                      <div>
+                        <input type="text" class="form-control" placeholder="Поиск" style="font-size: 12px;" />
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>тентованный</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 d-flex" style="font-size: 12px;">
+                    <span style="width: 128px;">Загрузка</span>
+                    <div class="d-flex flex-column">
+                      <div>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <span>отдельной машиной (FTL)</span>
+                        <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                      </div>
+                      <div>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <span>отдельной машиной или догрузом (FTL или LTL)</span>
+                        <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 d-flex" style="font-size: 12px;">
+                    <span style="width: 128px; ">GPS-мониторинг</span>
+                    <div class="d-flex flex-column">
+                      <div>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>запросить у перевозчика GPS-мониторинг груза с помощью бесплатного сервиса</span>
+                      </div>
+                      <div style="background-color: #fef7e7; padding:  5px 10px">
+                        <span>Убедитесь, что адрес заполнен. Так водитель будет знать, куда ехать</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 d-flex" style="font-size: 12px;">
+                    <span style="width: 128px; ">Добавить</span>
+                    <div class="d-flex flex-column">
+                      <div class="mb-3">
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Кол-во машин
+                        </button>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Экипаж
+                        </button>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          ADR
+                        </button>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Сцепка, пневмоход, коники
+                        </button>
+                      </div>
+                      <div class="mb-3">
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          TIR, CMR, T1, Медкнижка
+                        </button>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Ремней, шт
+                        </button>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Грузоподъемность
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="mb-3 d-flex justify-content-between flex-column" style="font-size: 12px;">
+                  <div class="mb-3">
+                    <button
+                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Возможен
+                      торг</button>
+                    <button
+                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Без
+                      торга</button>
+                    <button
+                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Запрос</button>
+                    <button
+                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Торги</button>
+                  </div>
+                  <span>Участники ATI.SU увидят, что возможен торг, и смогут предложить свою ставку</span>
+                  <div class="mt-3">
+                    <div class="d-flex">
+                      <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                      <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Ставка</h4>
+                    </div>
+                    <div class="mb-3 d-flex" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>С НДС, безнал</span>
+                      </div>
+                      <input type="text" class="form-control" style="width: 150px;">
+                      <select class="form-control" style="width: 85px; font-size: 12px">
+                        <option value="value1" selected>сом</option>
+                        <option value="value2">руб</option>
+                      </select>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>Без НДС, безнал</span>
+                      </div>
+                      <input type="text" class="form-control" style="width: 150px;">
+                      <span>кырг.сом</span>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>Наличными</span>
+                      </div>
+                      <input type="text" class="form-control" style="width: 150px;">
+                      <span>кырг.сом</span>
+                    </div>
+                    <div class="d-flex" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>Встречные предложения</span>
+                      </div>
+                      <div>
+                        <div class="d-flex" style="gap: 10px;">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <span>на карту</span>
+                        </div>
+                        <div class="d-flex" style="gap: 10px;">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <span>видны только вам</span>
+                        </div>
+                        <div class="d-flex align-items-center" style="gap: 10px;">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
+                          <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="mb-3 d-flex justify-content-between flex-column" style="font-size: 12px;">
+                  <div class=" d-flex" style="gap: 10px;">
+                    <div style="width: 128px;">
+                      <span>Оплата через</span>
+                    </div>
+                    <div>
+                      <div class="d-flex align-items-center" style="gap: 10px;">
+                        <input type="text" class="form-control" style="width: 70px;">
+                        <span>банковских дней</span>
+                      </div>
+                      <div class="mb-3 d-flex mt-2" style="gap: 10px;">
+                        <span style="color: #2277cc;">3 дн.</span>
+                        <span style="color: #2277cc;">5 дн.</span>
+                        <span style="color: #2277cc;">7 дн.</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="d-flex" style="gap: 10px;">
+                    <div style="width: 128px;">
+                      <span>Добавить</span>
+                    </div>
+                    <div>
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Предоплата деньгами или топливом
+                      </button>
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Оплата на выгрузке
+                      </button>
+                      <button class="form-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Прямой договор
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="mb-3 d-flex justify-content-between flex-column" style="font-size: 12px;">
+                  <div class="mt-3">
+                    <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>Контакты</span>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <span class="mb-2">укажите, к кому обратиться по объявлению</span>
+                        <input type="text" class="form-control" style="width: 500px;">
+                      </div>
+                    </div>
+                    <div class="mb-3 d-flex" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>Примечание</span>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <input type="text" class="form-control" style="width: 500px; height: 50px">
+                        <span style="color: #838b94">Не указывайте контакты (телефоны, скайп и пр.), иначе ваш груз
+                          удалит модератор.</span>
+                      </div>
+
+                    </div>
+                    <div class="d-flex" style="gap: 10px;">
+                      <div style="width: 128px;">
+                        <span>Добавить</span>
+                      </div>
+                      <div>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          № груза или заказа
+                        </button>
+                        <button class="form-btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Фото
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <hr />
+
+
+
+            </div>
+
+            <div class="mt-3" style="width: 70%;">
+              <button class="form-btn" style="text-transform: uppercase; padding: 12px 20px; height: 42px; border-radius: 21px;">
+                Опубликовать груз
+              </button>
+              <button class="form-btn" style="text-transform: uppercase; padding: 12px 20px; height: 42px; border-radius: 21px;">
+                Сохранить как шаблон 
+              </button>
+            </div>
+        </div>
+
+        <div style="width: 30%;">
+
+        </div>
+      </div>
+      </section>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    </div>
+    </div>
+
+  </main>
+
+  <!-- JS here -->
+  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/ajax-form.js"></script>
+  <script src="js/paroller.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/js_isotope.pkgd.min.js"></script>
+  <script src="js/imagesloaded.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/jquery.meanmenu.min.js"></script>
+  <script src="js/parallax-scroll.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/element-in-view.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>

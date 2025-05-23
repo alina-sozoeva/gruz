@@ -193,6 +193,19 @@ body {
   overflow-y: auto;
 }
 
+.main_table {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr  1fr 240px;
+}
+
+.stavka-btn {
+  border: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
 @media (min-width: 768px) {
   #wrapper {
     padding-left: 300px;
@@ -211,7 +224,7 @@ body {
   }
 
   #wrapper.toggled span {
-    visibility: hidden;
+    /* visibility: hidden; */
   }
   #wrapper.toggled i {
     float: right;

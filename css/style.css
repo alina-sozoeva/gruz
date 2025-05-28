@@ -182,7 +182,7 @@ body {
   color: white;
 }
 
-.car-carcase{
+.car-carcase {
   background-color: #ffffff;
   border: 1px solid #b5babf;
   border-radius: 2px;
@@ -201,7 +201,25 @@ body {
 
 .main_table {
   display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr  1fr 240px;
+  grid-template-columns: 120px 1fr 1fr 1fr 1fr 240px;
+}
+
+.bid_btn {
+  padding: 8px 12px;
+  color: #2277cc;
+  background-color: transparent;
+  border: 1px solid #2277cc;
+  transition: 0.3s;
+}
+
+.bid_btn:hover {
+  background-color: #2277cc;
+  color: white;
+}
+
+.bid_btn_active {
+  background-color: #2277cc;
+  color: white;
 }
 
 .stavka-btn {
@@ -330,7 +348,7 @@ body {
     left: 300px;
     width: 200px;
   }
-  
+
   .sidebar-nav {
     width: 200px;
   }
@@ -340,17 +358,17 @@ body {
   .header {
     padding-left: 20px;
   }
-  
+
   .nav a {
     padding: 0 15px;
     font-size: 11px;
   }
-  
+
   #sidebar-wrapper {
     left: 250px;
     width: 180px;
   }
-  
+
   .sidebar-nav {
     width: 180px;
   }
@@ -362,12 +380,12 @@ body {
     padding: 10px;
     gap: 10px;
   }
-  
+
   .nav {
     width: 100%;
     justify-content: center;
   }
-  
+
   #sidebar-wrapper {
     left: 0;
     width: 100%;
@@ -375,21 +393,21 @@ body {
     position: relative;
     margin-left: 0;
   }
-  
+
   .sidebar-nav {
     width: 100%;
     right: 0;
   }
-  
+
   #wrapper {
     padding-left: 0 !important;
   }
-  
+
   #page-content-wrapper {
     position: relative;
     padding: 10px;
   }
-  
+
   .car-carcase {
     height: auto;
     min-height: 126px;
@@ -400,20 +418,20 @@ body {
   .nav {
     flex-wrap: wrap;
   }
-  
+
   .nav a {
     padding: 0 10px;
     font-size: 10px;
   }
-  
+
   .sidebar-nav li {
     padding: 5px 0;
   }
-  
+
   .sidebar-nav li a {
     font-size: 12px;
   }
-  
+
   .form-btn {
     padding: 4px 8px;
     font-size: 10px;

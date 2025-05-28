@@ -83,10 +83,10 @@
                 <div class="d-flex justify-content-between">
                   <div class="d-flex">
                     <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
-                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Груз</h4>
+                    <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Груз</h4>
                   </div>
 
-                  <div style="width: 70%;" class="d-flex flex-column">
+                  <div style="width: 80%;" class="d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
                       <div>
                         <input type="text" class="form-control" placeholder="Введите описание груза"
@@ -111,27 +111,81 @@
                         расчёте на одну машину</span>
                     </div>
 
-                    <div class="d-flex" style='gap: 10px'>
-                      <span>X</span>
-                      <select class="form-control"
-                        style="height: 32px; border: 1px solid #ced4da; width:200px; font-size: 12px;"
-                        placeholder="Выберите упаковку">
-                        <option value="" disabled selected>Выберите упаковку</option>
-                        <option value="value1">т</option>
-                        <option value="value2">кг</option>
-                      </select>
-                      <div class="mb-3 d-flex">
-                        <input type="text" class="form-control" placeholder="шт."
-                          style="font-size: 12px; width: 50px" />
+                    <div style='display: none;' id="quantity">
+                      <div class="d-flex" style='gap: 10px; font-size: 12px;'>
+                        <span id="close_quantity"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                        <label>Упаковка
+                          <select class="form-control"
+                            style="height: 32px; border: 1px solid #ced4da; width:200px; font-size: 12px;"
+                            placeholder="Выберите упаковку">
+                            <option value="" selected>не выбрано</option>
+                            <option value="value1">т</option>
+                            <option value="value2">кг</option>
+                          </select>
+                        </label>
+                        <label class="mb-3">
+                          Кол-во
+                          <input type="text" class="form-control" placeholder="шт."
+                            style="font-size: 12px; width: 50px" />
+                        </label>
                       </div>
+
+                    </div>
+
+                    <div class="mb-3" style='display: none;' id="dimensions">
+                      <div class="d-flex" style='gap: 10px; font-size: 12px;'>
+                        <span id="close_dimensions"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                        <label>
+                          Габариты, ДхШхВ
+                          <div class="d-flex" style="gap: 10px;">
+                            <div>
+                              <input type="text" class="form-control" placeholder="м"
+                                style="font-size: 12px; width: 60px" />
+                              <div>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <span>особые</span>
+                              </div>
+                            </div>
+                            <div>
+                              <input type="text" class="form-control" placeholder="м"
+                                style="font-size: 12px; width: 60px" />
+                              <div>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <span>особые</span>
+                              </div>
+                            </div>
+                            <div>
+                              <input type="text" class="form-control" placeholder="м"
+                                style="font-size: 12px; width: 60px" />
+                              <div>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <span>особые</span>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+                        <label class="ms-3">
+                          Диаметр
+                          <input type="text" class="form-control" placeholder="м"
+                            style="font-size: 12px; width: 60px" />
+
+                        </label>
+                        <span class="mt-3" style="color: #838b94;">
+                          «Особые» габариты будут выделены в поиске, чтобы
+                          перевозчики обратили на них
+                          внимание.
+                        </span>
+
+                      </div>
+
                     </div>
 
                     <div class="mb-3">
-                      <button class="form-btn">
+                      <button class="form-btn" id="quantity_btn">
                         <i class="fa-solid fa-plus"></i>
                         Упаковка и кол-во
                       </button>
-                      <button class="form-btn">
+                      <button class="form-btn" id="dimensions_btn">
                         <i class="fa-solid fa-plus"></i>
                         Габариты и диаметр
                       </button>
@@ -147,10 +201,10 @@
                 <div class="d-flex justify-content-between">
                   <div class="d-flex">
                     <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
-                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Когда</h4>
+                    <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Когда</h4>
                   </div>
 
-                  <div style="width: 70%;" class="d-flex flex-column">
+                  <div style="width: 80%;" class="d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
                       <div>
                         <select name="select"
@@ -183,10 +237,10 @@
                 <div class="d-flex justify-content-between">
                   <div class="d-flex">
                     <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
-                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Загрузка</h4>
+                    <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Загрузка</h4>
                   </div>
 
-                  <div style="width: 70%;" class="d-flex flex-column">
+                  <div style="width: 80%;" class="d-flex flex-column">
                     <div class="d-flex align-items-center mb-2" style="gap: 10px">
                       <div>
                         <input type="text" class="form-control" placeholder="Населенный пункт"
@@ -202,8 +256,30 @@
                         <i class="fa-solid fa-bars"></i>
                       </span>
                     </div>
+                    <div style="display: none;" id="loading_time">
+                      <div class="d-flex" style='gap: 5px; font-size: 12px;'>
+                        <span id="close_loading_time"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                        <label>
+                          Время загрузки
+                          <div>
+                            <div class="d-flex align-items-center mb-2" style="gap: 10px;">
+                              <input id="appointment-time" type="time" name="appointment-time" class="form-control"
+                                placeholder="00:00" style="font-size: 12px; width: 80px" /> -
+                              <input id="appointment-time" type="time" name="appointment-time" class="form-control"
+                                placeholder="00:00" style="font-size: 12px; width: 80px" />
+                            </div>
+
+                            <div>
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <span>круглосуточно</span>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+
+                    </div>
                     <div class="mb-3">
-                      <button class="form-btn">
+                      <button class="form-btn" id="loading_time_btn">
                         <i class="fa-solid fa-plus"></i>
                         Время загрузки
                       </button>
@@ -232,10 +308,10 @@
                 <div class="mb-3 d-flex justify-content-between">
                   <div class="d-flex">
                     <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
-                    <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Разгрузка</h4>
+                    <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Разгрузка</h4>
                   </div>
 
-                  <div style="width: 70%;" class="d-flex flex-column">
+                  <div style="width: 80%;" class="d-flex flex-column">
                     <div class="d-flex align-items-center mb-2" style="gap: 10px">
                       <div>
                         <input type="text" class="form-control" placeholder="Населенный пункт"
@@ -251,8 +327,44 @@
                         <i class="fa-solid fa-bars"></i>
                       </span>
                     </div>
-                    <div class="mb-3">
-                      <button class="form-btn">
+
+                    <div style='display: none;' id="date_time">
+                      <div class="d-flex" style='gap: 5px; font-size: 12px;'>
+                        <span id="close_date_time"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                        <label>
+                          Дата и время
+                          <div class="d-flex" style="gap: 15px;">
+                            <div class="d-flex" style="gap: 10px;">
+                              <div>
+                                <input type="date" class="form-control mb-2" placeholder="Выберите дату"
+                                  style="font-size: 12px; width: 180px" />
+                                <div>
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <span>диапазон</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="d-flex align-items-center mb-2" style="gap: 10px;">
+                                <input id="appointment-time" type="time" name="appointment-time" class="form-control"
+                                  placeholder="00:00" style="font-size: 12px; width: 80px" /> -
+                                <input id="appointment-time" type="time" name="appointment-time" class="form-control"
+                                  placeholder="00:00" style="font-size: 12px; width: 80px" />
+                              </div>
+                              <div>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <span>круглосуточно</span>
+                              </div>
+                            </div>
+                          </div>
+
+                        </label>
+                      </div>
+
+                    </div>
+
+                    <div class="mb-1">
+                      <button class="form-btn" id="date_time_btn">
                         <i class="fa-solid fa-plus"></i>
                         Дата и время
                       </button>
@@ -261,9 +373,9 @@
                 </div>
                 <div class="mb-3 d-flex justify-content-between">
                   <div class="d-flex">
-                    <h4 class="ms-2" style="width: 20%; font-size: 14px;">Маршрут</h4>
+                    <h4 class="ms-2" style="width: 10%; font-size: 14px;">Маршрут</h4>
                   </div>
-                  <div style="width: 70%; gap: 5px" class="d-flex align-items-center">
+                  <div style="width: 80%; gap: 5px" class="d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <span style="color: #b5babf; font-size: 12px">кругорейс</span>
                     <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
@@ -372,7 +484,7 @@
                     </div>
                   </div>
                   <div class="mt-3 d-flex" style="font-size: 12px;">
-                    <span style="width: 128px;">Загрузка</span>
+                    <span style="width: 150px;">Загрузка</span>
                     <div class="d-flex flex-column">
                       <div>
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -387,7 +499,7 @@
                     </div>
                   </div>
                   <div class="mt-3 d-flex" style="font-size: 12px;">
-                    <span style="width: 128px; ">GPS-мониторинг</span>
+                    <span style="width: 150px; ">GPS-мониторинг</span>
                     <div class="d-flex flex-column">
                       <div>
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -398,37 +510,149 @@
                       </div>
                     </div>
                   </div>
+
+                  <div style="font-size: 12px;">
+                    <div style="display: none;" id="num_cars">
+                      <div class="d-flex mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_num_cars"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>Кол-во машин</span>
+                        </div>
+                        <input type="text" class="form-control" value="1" placeholder="м"
+                          style="font-size: 12px; width: 60px" />
+                      </div>
+                    </div>
+                    <div style="display: none;" id="crew">
+                      <div class="d-flex mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_crew"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>Экипаж</span>
+                        </div>
+                        <span>Требуется 2 водителя</span>
+                      </div>
+                    </div>
+                    <div style="display: none;" id="adr">
+                      <div class="d-flex align-items-center mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_adr"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>ADR</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="1-9"
+                          style="font-size: 12px; width: 60px" />
+                        <span style="color: #838b94; margin-left: 10px">
+                          Класс опасности груза
+                          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div style="display: none;" id="trailer_setup">
+                      <div class="d-flex align-items-center mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_trailer_setup"><i class="fa-solid fa-xmark"
+                              style="font-size: 16px;"></i></span>
+                          <span>Требования</span>
+                        </div>
+                        <div class="d-flex" style="gap: 50px;">
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>Сцепка</span>
+                          </div>
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>Пневмоход</span>
+                          </div>
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>Коники</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="display: none;" id="tir">
+                      <div class="d-flex align-items-center mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_tir"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>Разрешения</span>
+                        </div>
+                        <div class="d-flex" style="gap: 50px;">
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>TIR</span>
+                            <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                          </div>
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>T1</span>
+                            <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                          </div>
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>CMR</span>
+                            <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                          </div>
+                          <div style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>Медкнижка</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="display: none;" id="belts">
+                      <div class="d-flex mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_belts"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>Ремней</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="шт" style="font-size: 12px; width: 60px" />
+                      </div>
+                    </div>
+
+                    <div style="display: none;" id="capacity">
+                      <div class="d-flex mt-3">
+                        <div style="width: 150px;">
+                          <span id="close_capacity"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>Грузоподъемность</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="т" style="font-size: 12px; width: 60px" />
+                        <span style="color: #838b94; margin-left: 10px">
+                          Выберите или введите требуемую грузоподъемность ТС
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+
                   <div class="mt-3 d-flex" style="font-size: 12px;">
                     <span style="width: 128px; ">Добавить</span>
                     <div class="d-flex flex-column">
                       <div class="mb-3">
-                        <button class="form-btn">
+                        <button class="form-btn" id="num_cars_btn">
                           <i class="fa-solid fa-plus"></i>
                           Кол-во машин
                         </button>
-                        <button class="form-btn">
+                        <button class="form-btn" id="crew_btn">
                           <i class="fa-solid fa-plus"></i>
                           Экипаж
                         </button>
-                        <button class="form-btn">
+                        <button class="form-btn" id="adr_btn">
                           <i class="fa-solid fa-plus"></i>
                           ADR
                         </button>
-                        <button class="form-btn">
+                        <button class="form-btn" id="trailer_setup_btn">
                           <i class="fa-solid fa-plus"></i>
                           Сцепка, пневмоход, коники
                         </button>
                       </div>
                       <div class="mb-3">
-                        <button class="form-btn">
+                        <button class="form-btn" id="tir_btn">
                           <i class="fa-solid fa-plus"></i>
                           TIR, CMR, T1, Медкнижка
                         </button>
-                        <button class="form-btn">
+                        <button class="form-btn" id="belts_btn">
                           <i class="fa-solid fa-plus"></i>
                           Ремней, шт
                         </button>
-                        <button class="form-btn">
+                        <button class="form-btn" id="capacity_btn">
                           <i class="fa-solid fa-plus"></i>
                           Грузоподъемность
                         </button>
@@ -440,16 +664,10 @@
 
                 <div class="mb-3 d-flex justify-content-between flex-column" style="font-size: 12px;">
                   <div class="mb-3">
-                    <button
-                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Возможен
-                      торг</button>
-                    <button
-                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Без
-                      торга</button>
-                    <button
-                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Запрос</button>
-                    <button
-                      style="padding: 8px 12px; color:#2277cc; background-color: transparent; border: 1px solid #2277cc;">Торги</button>
+                    <button id="torg_btn" class="bid_btn">Возможен торг</button>
+                    <button id="no_torg_btn" class="bid_btn">Без торга</button>
+                    <button id="request_btn" class="bid_btn">Запрос</button>
+                    <button id="bargaining_btn" class="bid_btn">Торги</button>
                   </div>
                   <span>Участники ATI.SU увидят, что возможен торг, и смогут предложить свою ставку</span>
                   <div class="mt-3">
@@ -478,8 +696,16 @@
                       <div style="width: 128px;">
                         <span>Наличными</span>
                       </div>
-                      <input type="text" class="form-control" style="width: 150px;">
-                      <span>кырг.сом</span>
+                      <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center" style="gap: 10px;">
+                          <input type="text" class="form-control" style="width: 150px;">
+                          <span>кырг.сом</span>
+                        </div>
+                        <div class="d-flex" style="gap: 10px;">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <span>на карту</span>
+                        </div>
+                      </div>
                     </div>
                     <div class="d-flex" style="gap: 10px;">
                       <div style="width: 128px;">
@@ -488,17 +714,16 @@
                       <div>
                         <div class="d-flex" style="gap: 10px;">
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <span>на карту</span>
-                        </div>
-                        <div class="d-flex" style="gap: 10px;">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                           <span>видны только вам</span>
                         </div>
-                        <div class="d-flex align-items-center" style="gap: 10px;">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
-                          <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                        <div id="torg">
+                          <div class="d-flex align-items-center" style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
+                            <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                          </div>
                         </div>
+
                       </div>
 
                     </div>
@@ -648,6 +873,7 @@
                   </div>
 
                 </div>
+
               </div>
               <hr />
             </div>
@@ -699,6 +925,99 @@
   <script src="js/element-in-view.js"></script>
   <script src="js/main.js"></script>
   <script>
+    $(document).ready(function () {
+
+      let isBidActive = false
+
+      const sections = [
+        {
+          id: 'quantity',
+          btnId: 'quantity_btn',
+          closeId: 'close_quantity',
+        },
+        {
+          id: 'dimensions',
+          btnId: 'dimensions_btn',
+          closeId: 'close_dimensions',
+        },
+        {
+          id: 'loading_time',
+          btnId: 'loading_time_btn',
+          closeId: 'close_loading_time',
+        },
+        {
+          id: 'date_time',
+          btnId: 'date_time_btn',
+          closeId: 'close_date_time',
+        },
+        {
+          id: 'num_cars',
+          btnId: 'num_cars_btn',
+          closeId: 'close_num_cars',
+        },
+        {
+          id: 'crew',
+          btnId: 'crew_btn',
+          closeId: 'close_crew',
+        },
+        {
+          id: 'adr',
+          btnId: 'adr_btn',
+          closeId: 'close_adr',
+        },
+        {
+          id: 'trailer_setup',
+          btnId: 'trailer_setup_btn',
+          closeId: 'close_trailer_setup',
+        },
+        {
+          id: 'tir',
+          btnId: 'tir_btn',
+          closeId: 'close_tir',
+        },
+        {
+          id: 'belts',
+          btnId: 'belts_btn',
+          closeId: 'close_belts',
+        },
+        {
+          id: 'capacity',
+          btnId: 'capacity_btn',
+          closeId: 'close_capacity',
+        }
+      ];
+
+      sections.forEach((item) => $(`#${item.id}`).hide())
+
+      sections.forEach((item) => {
+        $(`#${item.btnId}`).click(function () {
+          $(this).hide();
+          $(`#${item.id}`).show();
+        });
+
+        $(`#${item.closeId}`).click(function () {
+          $(`#${item.id}`).hide();
+          $(`#${item.btnId}`).show();
+        });
+      })
+
+      $('#torg_btn').addClass('bid_btn_active');
+
+      $('.bid_btn').on('click', function () {
+        $('.bid_btn').removeClass('bid_btn_active');
+        $(this).addClass('bid_btn_active');
+      })
+
+      $('#torg_btn').on('click', function () {
+        $('#torg').show()
+      })
+
+      $('#no_torg_btn').on('click', function () {
+        $('#torg').hide()
+      })
+
+    });
+
 
   </script>
 </body>

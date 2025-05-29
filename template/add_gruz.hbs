@@ -666,66 +666,211 @@
                   <div class="mb-3">
                     <button id="torg_btn" class="bid_btn">Возможен торг</button>
                     <button id="no_torg_btn" class="bid_btn">Без торга</button>
-                    <button id="request_btn" class="bid_btn">Запрос</button>
-                    <button id="bargaining_btn" class="bid_btn">Торги</button>
+                    <button id="zapros_btn" class="bid_btn">Запрос</button>
+                    <button id="torgi_btn" class="bid_btn">Торги</button>
                   </div>
-                  <span>Участники ATI.SU увидят, что возможен торг, и смогут предложить свою ставку</span>
-                  <div class="mt-3">
-                    <div class="d-flex">
-                      <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
-                      <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Ставка</h4>
-                    </div>
-                    <div class="mb-3 d-flex" style="gap: 10px;">
-                      <div style="width: 128px;">
-                        <span>С НДС, безнал</span>
+                  <div id="torg_wrap">
+                    <span id="torg_text">Участники ATI.SU увидят, что возможен торг, и смогут
+                      предложить свою
+                      ставку</span>
+                    <span id="no_torg_text" style="display: none;">Участники ATI.SU смогут предлагать свои услуги только
+                      по вашей ставке</span>
+                    <div class="mt-3">
+                      <div class="d-flex">
+                        <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                        <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Ставка</h4>
                       </div>
-                      <input type="text" class="form-control" style="width: 150px;">
-                      <select class="form-control" style="width: 85px; font-size: 12px">
-                        <option value="value1" selected>сом</option>
-                        <option value="value2">руб</option>
-                      </select>
-                    </div>
-                    <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
-                      <div style="width: 128px;">
-                        <span>Без НДС, безнал</span>
-                      </div>
-                      <input type="text" class="form-control" style="width: 150px;">
-                      <span>кырг.сом</span>
-                    </div>
-                    <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
-                      <div style="width: 128px;">
-                        <span>Наличными</span>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center" style="gap: 10px;">
-                          <input type="text" class="form-control" style="width: 150px;">
-                          <span>кырг.сом</span>
+                      <div class="mb-3 d-flex" style="gap: 10px;">
+                        <div style="width: 128px;">
+                          <span>С НДС, безнал</span>
                         </div>
-                        <div class="d-flex" style="gap: 10px;">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <span>на карту</span>
-                        </div>
+                        <input type="text" class="form-control" style="width: 150px;">
+                        <select class="form-control" style="width: 85px; font-size: 12px">
+                          <option value="value1" selected>сом</option>
+                          <option value="value2">руб</option>
+                        </select>
                       </div>
-                    </div>
-                    <div class="d-flex" style="gap: 10px;">
-                      <div style="width: 128px;">
-                        <span>Встречные предложения</span>
-                      </div>
-                      <div>
-                        <div class="d-flex" style="gap: 10px;">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <span>видны только вам</span>
+                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                        <div style="width: 128px;">
+                          <span>Без НДС, безнал</span>
                         </div>
-                        <div id="torg">
+                        <input type="text" class="form-control" style="width: 150px;">
+                        <span>кырг.сом</span>
+                      </div>
+                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                        <div style="width: 128px;">
+                          <span>Наличными</span>
+                        </div>
+                        <div class="d-flex flex-column">
                           <div class="d-flex align-items-center" style="gap: 10px;">
+                            <input type="text" class="form-control" style="width: 150px;">
+                            <span>кырг.сом</span>
+                          </div>
+                          <div class="d-flex" style="gap: 10px;">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
-                            <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                            <span>на карту</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex" style="gap: 10px;">
+                        <div style="width: 128px;">
+                          <span>Встречные предложения</span>
+                        </div>
+                        <div>
+                          <div class="d-flex" style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>видны только вам</span>
+                          </div>
+                          <div id="torg">
+                            <div class="d-flex align-items-center" style="gap: 10px;">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
+                              <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="zapros_wrap" style="display: none;">
+                    <span>Участники ATI.SU смогут предложить свою ставку</span>
+                    <div class="mt-3">
+                      <div class="mb-3 d-flex" style="gap: 10px;">
+                        <div style="width: 128px;">
+                          <span>Можно предлагать</span>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div class="d-flex flex-column">
+                            <div class="d-flex" style="gap: 10px;">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                              <span>С НДС, безнал</span>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="d-flex" style="gap: 10px;">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                              <span>Без НДС, безнал</span>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="d-flex" style="gap: 10px;">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                              <span>Наличными</span>
+                            </div>
                           </div>
                         </div>
 
                       </div>
+                      <div class="d-flex" style="gap: 10px;">
+                        <div style="width: 128px;">
+                          <span>Встречные предложения</span>
+                        </div>
+                        <div>
+                          <div class="d-flex" style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>видны только вам</span>
+                          </div>
+                          <div>
+                            <div class="d-flex align-items-center" style="gap: 10px;">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
+                              <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div id="torgi_wrap" style="display: none; font-size: 12px;">
+                    <span>Участники ATI.SU будут соревноваться, предлагая наиболее выгодную ставку</span>
+                    <div class="mt-3">
+                      <div class="mb-3 d-flex" style="gap: 10px;">
+                        <div class="d-flex" style="width: 128px; gap: 5px;">
+                          <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                          <span>Начальная ставка</span>
+                        </div>
+                        <select class="form-control" style="width: 150px; font-size: 12px">
+                          <option value="value1" selected>с НДС</option>
+                          <option value="value2">без НДС</option>
+                        </select>
+                        <input type="text" class="form-control" style="width: 150px; font-size: 12px;"
+                          placeholder="Сумма">
+                        <select class="form-control" style="width: 85px; font-size: 12px">
+                          <option value="value1" selected>сом</option>
+                          <option value="value2">руб</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                        <div class="d-flex" style="width: 128px; gap: 5px;">
+                          <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                          <span>Шаг</span>
+                        </div>
+                        <input type="text" class="form-control" style="width: 150px;font-size: 12px;" placeholder="сом">
+                        <span class="form-label"
+                          style="font-size: 12px; color: #838b94; line-height: 1.2; width: 200px">На
+                          столько уменьшится ставка после отклика перевозчика</span>
+                      </div>
+                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                        <div class="d-flex" style="width: 128px; gap: 5px;">
+                          <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                          <span>Длительность Торгов</span>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div class="d-flex align-items-center mb-2" style="gap: 10px;">
+                            <select class="form-control" style="width: 200px; font-size: 12px">
+                              <option value="value1" selected>4 часа</option>
+                              <option value="value2">5 часов</option>
+                            </select>
+                            <select class="form-control" style="width: 200px; font-size: 12px">
+                              <option value="value1" selected>с момента публикации</option>
+                              <option value="value2">с момента первой ставки</option>
+                            </select>
+                          </div>
+                          <div class="d-flex" style="gap: 10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>Включить aнтиснайпер продлит торги на 20 секунд, если ставка сделана в последние 20
+                              секунд</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                        <div class="d-flex" style="width: 128px; gap: 5px;">
+                          <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                          <span>Выбрать победителя</span>
+                        </div>
+                        <div class="d-flex flex-column" style="gap: 10px;">
+                          <div>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <span>по лучшей ставке</span>
+                          </div>
+                          <div>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <span>с учётом даты загрузки и лучшей ставки</span>
+                            <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-3 d-flex" style="font-size: 12px;">
+                        <span style="width: 128px; ">Добавить</span>
+                        <div class="d-flex flex-column">
+                          <div class="mb-3">
+                            <button class="form-btn" id="num_cars_btn">
+                              <i class="fa-solid fa-plus"></i>
+                              Встречные предложения
+                            </button>
+                            <button class="form-btn" id="crew_btn">
+                              <i class="fa-solid fa-plus"></i>
+                              Автопродление
+                            </button>
+                            <button class="form-btn" id="adr_btn">
+                              <i class="fa-solid fa-plus"></i>
+                              Повышение ставки
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -747,22 +892,57 @@
                         <span style="color: #2277cc;">7 дн.</span>
                       </div>
                     </div>
-
                   </div>
-                  <div class="d-flex" style="gap: 10px;">
+
+                  <div id="predoplata" style="display: none;">
+                    <div class="d-flex  mt-3">
+                      <div style="width: 128px;">
+                        <span id="close_predoplata"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                        <span>Предоплата</span>
+                      </div>
+                      <div class="d-flex flex-column mb-3">
+                        <input type="text" class="form-control mb-1" value="1" placeholder="%"
+                          style="font-size: 12px; width: 70px" />
+                        <div class="d-flex" style="gap: 10px;">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <span>Предоплата топливом</span>
+                        </div>
+                        <div class="d-flex" style="gap: 10px;">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <span>Оплата на выгрузке (скрывает оплату через)</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div id="dogovor" style="display: none;">
+                    <div class="d-flex mt-3">
+                      <div style="width: 128px;">
+                        <span id="close_dogovor"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                        <span>Прямой договор</span>
+                      </div>
+                      <div class="d-flex" style="gap: 10px;">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>Заключаю договор с перевозчиком от своей фирмы</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex mt-3" style="gap: 10px;">
                     <div style="width: 128px;">
                       <span>Добавить</span>
                     </div>
                     <div>
-                      <button class="form-btn">
+                      <button class="form-btn" id="predoplata_btn">
                         <i class="fa-solid fa-plus"></i>
                         Предоплата деньгами или топливом
                       </button>
-                      <button class="form-btn">
+                      <button class="form-btn" id="oplata_btn">
                         <i class="fa-solid fa-plus"></i>
                         Оплата на выгрузке
                       </button>
-                      <button class="form-btn">
+                      <button class="form-btn" id="dogovor_btn">
                         <i class="fa-solid fa-plus"></i>
                         Прямой договор
                       </button>
@@ -984,6 +1164,21 @@
           id: 'capacity',
           btnId: 'capacity_btn',
           closeId: 'close_capacity',
+        },
+        {
+          id: 'predoplata',
+          btnId: 'predoplata_btn',
+          closeId: 'close_predoplata',
+        },
+        {
+          id: 'predoplata',
+          btnId: 'oplata_btn',
+          closeId: 'close_predoplata',
+        },
+        {
+          id: 'dogovor',
+          btnId: 'dogovor_btn',
+          closeId: 'close_dogovor',
         }
       ];
 
@@ -1008,13 +1203,33 @@
         $(this).addClass('bid_btn_active');
       })
 
-      $('#torg_btn').on('click', function () {
-        $('#torg').show()
+      const showBlocks = (toShow = [], toHide = []) => {
+        toShow.forEach(id => $(`#${id}`).show())
+        toHide.forEach(id => $(`#${id}`).hide())
+      }
+
+      $('#torg_btn').on('click', () => {
+        showBlocks(
+          ['torg', 'torg_text', 'torg_wrap'],
+          ['no_torg_text', 'zapros_wrap', 'torgi_wrap']
+        )
       })
 
-      $('#no_torg_btn').on('click', function () {
-        $('#torg').hide()
+      $('#no_torg_btn').on('click', () => {
+        showBlocks(
+          ['no_torg_text', 'torg_wrap'],
+          ['torg', 'torg_text', 'zapros_wrap', 'torgi_wrap']
+        )
       })
+
+      $('#zapros_btn').on('click', () => {
+        showBlocks(['zapros_wrap'], ['torg_wrap', 'torgi_wrap'])
+      })
+
+      $('#torgi_btn').on('click', () => {
+        showBlocks(['torgi_wrap'], ['torg_wrap', 'zapros_wrap'])
+      })
+
 
     });
 

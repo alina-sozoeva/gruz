@@ -40,12 +40,14 @@ body {
 
 /* Header Styles */
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   background-color: #e9f1fa;
   align-items: center;
   width: 100%;
   padding-left: 50px;
+  z-index: 1002;
 }
 
 .nav {
@@ -112,7 +114,7 @@ body {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 0;
+  width: 56;
 }
 
 #page-content-wrapper {
@@ -124,6 +126,7 @@ body {
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
   margin-left: 70px;
+  padding-right: 90px;
 }
 
 #wrapper:not(.toggled) .sidebar-icon {
@@ -201,6 +204,7 @@ body {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .no-content {
@@ -278,10 +282,10 @@ body {
 }
 
 .summary {
-  position: fixed;
+  position: sticky;
   margin-left: 20px;
-  top: 160px;
-  z-index: 12;
+  top: 40px;
+  z-index: 10;
   background-color: #ffffff;
   font-size: 12px;
   width: 270px;
@@ -326,7 +330,7 @@ body {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 50px;
+    width: 56;
   }
 
   #wrapper.toggled span {
@@ -366,7 +370,7 @@ body {
   }
 
   #wrapper.toggled {
-    padding-left: 0;
+    padding-left: 56;
   }
 
   #sidebar-wrapper {

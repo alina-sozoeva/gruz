@@ -80,123 +80,119 @@
 
             <div class="d-flex justify-content-between; " style="position: relative; ">
               <div class="form_wrap mt-4">
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex">
-                    <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
-                    <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Груз</h4>
-                  </div>
 
-                  <div style="width: 80%;" class="d-flex flex-column">
-                    <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
-                      <div>
-                        <input type="text" class="form-control" placeholder="Введите описание груза"
-                          style="font-size: 12px; width: 220px" />
-                      </div>
-                      <div>
-                        <input type="text" class="form-control" placeholder="Вес" style="font-size: 12px; width:70px" />
-                      </div>
-                      <div>
-                        <select name="select" class="form-control"
-                          style="height: 32px; border: 1px solid #ced4da; width:70px; font-size: 12px;">
-                          <option value="value1" selected>т</option>
-                          <option value="value2">кг</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <input type="text" class="form-control" placeholder="Объём м³"
-                          style="font-size: 12px; width: 85px" />
-                      </div>
-                      <span class="form-label" style="font-size: 12px; color: #838b94; line-height: 1.2;">В
-                        расчёте на одну машину</span>
+                <div id="gruz">
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                      <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+                      <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Груз</h4>
                     </div>
 
-                    <div style='display: none;' id="quantity">
-                      <div class="d-flex" style='gap: 10px; font-size: 12px;'>
-                        <span id="close_quantity"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
-                        <label>Упаковка
-                          <select class="form-control"
-                            style="height: 32px; border: 1px solid #ced4da; width:200px; font-size: 12px;"
-                            placeholder="Выберите упаковку">
-                            <option value="" selected>не выбрано</option>
-                            <option value="value1">т</option>
+                    <div style="width: 80%;" class="d-flex flex-column">
+                      <div class="d-flex align-items-center mb-2 gap-2">
+                        <div>
+                          <input type="text" class="form-control" placeholder="Введите описание груза"
+                            style="width: 220px" />
+                        </div>
+                        <div>
+                          <input type="text" class="form-control" placeholder="Вес" style="width:70px" />
+                        </div>
+                        <div>
+                          <select name="select" class="form-control" style="height: 32px; width:70px;">
+                            <option value="value1" selected>т</option>
                             <option value="value2">кг</option>
                           </select>
-                        </label>
-                        <label class="mb-3">
-                          Кол-во
-                          <input type="text" class="form-control" placeholder="шт."
-                            style="font-size: 12px; width: 50px" />
-                        </label>
+                        </div>
+
+                        <div>
+                          <input type="text" class="form-control" placeholder="Объём м³" style="width: 85px" />
+                        </div>
+                        <span class="form-label" style="font-size: 12px; color: #838b94; line-height: 1.2;">В
+                          расчёте на одну машину</span>
                       </div>
 
-                    </div>
-
-                    <div class="mb-3" style='display: none;' id="dimensions">
-                      <div class="d-flex" style='gap: 10px; font-size: 12px;'>
-                        <span id="close_dimensions"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
-                        <label>
-                          Габариты, ДхШхВ
-                          <div class="d-flex" style="gap: 10px;">
-                            <div>
-                              <input type="text" class="form-control" placeholder="м"
-                                style="font-size: 12px; width: 60px" />
-                              <div>
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <span>особые</span>
-                              </div>
-                            </div>
-                            <div>
-                              <input type="text" class="form-control" placeholder="м"
-                                style="font-size: 12px; width: 60px" />
-                              <div>
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <span>особые</span>
-                              </div>
-                            </div>
-                            <div>
-                              <input type="text" class="form-control" placeholder="м"
-                                style="font-size: 12px; width: 60px" />
-                              <div>
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <span>особые</span>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-                        <label class="ms-3">
-                          Диаметр
-                          <input type="text" class="form-control" placeholder="м"
-                            style="font-size: 12px; width: 60px" />
-
-                        </label>
-                        <span class="mt-3" style="color: #838b94;">
-                          «Особые» габариты будут выделены в поиске, чтобы
-                          перевозчики обратили на них
-                          внимание.
-                        </span>
+                      <div class="d-none" id="quantity">
+                        <div class="d-flex gap-2" style="font-size: 12px;">
+                          <span id="close_quantity"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <label>Упаковка
+                            <select class="form-control mt-2" style="height: 32px; width:200px;"
+                              placeholder="Выберите упаковку">
+                              <option value="" selected>не выбрано</option>
+                              <option value="value1">т</option>
+                              <option value="value2">кг</option>
+                            </select>
+                          </label>
+                          <label class="mb-3">
+                            Кол-во
+                            <input type="text" class="form-control mt-2" placeholder="шт." style="width: 50px" />
+                          </label>
+                        </div>
 
                       </div>
 
-                    </div>
+                      <div class="mb-3 d-none" id="dimensions">
+                        <div class="d-flex gap-2" style="font-size: 12px;">
+                          <span id="close_dimensions"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <label class="gap-2">
+                            Габариты, ДхШхВ
+                            <div class="d-flex gap-2 mt-2">
+                              <div class="d-flex flex-column gap-2">
+                                <input type="text" class="form-control" placeholder="м" style="width: 60px" />
+                                <div>
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <span>особые</span>
+                                </div>
+                              </div>
+                              <div class="d-flex flex-column gap-2">
+                                <input type="text" class="form-control" placeholder="м" style="width: 60px" />
+                                <div>
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <span>особые</span>
+                                </div>
+                              </div>
+                              <div class="d-flex flex-column gap-2">
+                                <input type="text" class="form-control" placeholder="м" style="width: 60px" />
+                                <div>
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <span>особые</span>
+                                </div>
+                              </div>
+                            </div>
+                          </label>
+                          <label class="ms-3">
+                            Диаметр
+                            <input type="text" class="form-control mt-2" placeholder="м" style="width: 60px" />
 
-                    <div class="mb-3">
-                      <button class="form-btn" id="quantity_btn">
-                        <i class="fa-solid fa-plus"></i>
-                        Упаковка и кол-во
-                      </button>
-                      <button class="form-btn" id="dimensions_btn">
-                        <i class="fa-solid fa-plus"></i>
-                        Габариты и диаметр
-                      </button>
-                      <button class="form-btn">
-                        <i class="fa-solid fa-plus"></i>
-                        Еще груз
-                      </button>
+                          </label>
+                          <span class="mt-4" style="color: #838b94;">
+                            «Особые» габариты будут выделены в поиске, чтобы
+                            перевозчики обратили на них
+                            внимание.
+                          </span>
+
+                        </div>
+
+                      </div>
+
+                      <div class="mb-3">
+                        <button class="form-btn" id="quantity_btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Упаковка и кол-во
+                        </button>
+                        <button class="form-btn" id="dimensions_btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Габариты и диаметр
+                        </button>
+                        <button class="form-btn" id="gruz_btn">
+                          <i class="fa-solid fa-plus"></i>
+                          Еще груз
+                        </button>
+                      </div>
                     </div>
                   </div>
+                  <hr />
                 </div>
-                <hr />
+
 
                 <div class="d-flex justify-content-between">
                   <div class="d-flex">
@@ -205,23 +201,20 @@
                   </div>
 
                   <div style="width: 80%;" class="d-flex flex-column">
-                    <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
+                    <div class="d-flex justify-content-between align-items-center mb-2 gap-2">
                       <div>
-                        <select name="select" class="form-control"
-                          style="height: 32px; border: 1px solid #ced4da; width:220px; font-size: 12px;">
+                        <select name="select" class="form-control" style="height: 32px; width:220px;">
                           <option value="value1" selected>Готов к загрузке</option>
                           <option value="value2">Постоянно</option>
                           <option value="value2">Груза нет, запрос ставки</option>
                         </select>
                       </div>
                       <div>
-                        <input type="date" class="form-control" placeholder="Вес"
-                          style="font-size: 12px; width:120px" />
+                        <input type="date" class="form-control" placeholder="Вес" style="width:120px" />
                       </div>
                       +
                       <div>
-                        <select name="select" class="form-control"
-                          style="height: 32px; border: 1px solid #ced4da; width:70px; font-size: 12px; color:#505c69">
+                        <select name="select" class="form-control" style="height: 32px; width:70px;">
                           <option value="value1" selected>0 дн.</option>
                           <option value="value2">1 дн.</option>
                           <option value="value3">2 дн.</option>
@@ -241,14 +234,13 @@
                   </div>
 
                   <div style="width: 80%;" class="d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2" style="gap: 10px">
+                    <div class="d-flex align-items-center mb-2 gap-2">
                       <div>
-                        <input type="text" class="form-control" placeholder="Населенный пункт"
-                          style="font-size: 12px; width: 220px" />
+                        <input type="text" class="form-control" placeholder="Населенный пункт" style="width: 220px" />
                       </div>
                       <div>
                         <input type="text" class="form-control" placeholder="Адрес в населённом пункте"
-                          style="font-size: 12px; width: 220px" />
+                          style="width: 220px" />
                       </div>
                       <span class="form-label"
                         style="font-size: 12px; color: #838b94; line-height: 1.2; margin-bottom: 0">
@@ -256,17 +248,18 @@
                         <i class="fa-solid fa-bars"></i>
                       </span>
                     </div>
-                    <div style="display: none;" id="loading_time">
-                      <div class="d-flex" style='gap: 5px; font-size: 12px;'>
+
+                    <div class="d-none" id="loading_time">
+                      <div class="d-flex" style="gap: 5px; font-size: 12px;">
                         <span id="close_loading_time"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                         <label>
                           Время загрузки
-                          <div>
-                            <div class="d-flex align-items-center mb-2" style="gap: 10px;">
+                          <div class="mt-2">
+                            <div class="d-flex align-items-center mb-2 gap-2">
                               <input id="appointment-time" type="time" name="appointment-time" class="form-control"
-                                placeholder="00:00" style="font-size: 12px; width: 80px" /> -
+                                placeholder="00:00" style="width: 80px" /> -
                               <input id="appointment-time" type="time" name="appointment-time" class="form-control"
-                                placeholder="00:00" style="font-size: 12px; width: 80px" />
+                                placeholder="00:00" style="width: 80px" />
                             </div>
 
                             <div>
@@ -278,12 +271,14 @@
                       </div>
 
                     </div>
+
                     <div class="mb-3">
                       <button class="form-btn" id="loading_time_btn">
                         <i class="fa-solid fa-plus"></i>
                         Время загрузки
                       </button>
                     </div>
+
                     <div class="mb-3 d-flex" style="font-size: 12px;">
                       <span>Добавить точку маршрута:</span>
                       <div class="blue_span ms-2">
@@ -305,6 +300,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="mb-3 d-flex justify-content-between">
                   <div class="d-flex">
                     <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
@@ -312,14 +308,13 @@
                   </div>
 
                   <div style="width: 80%;" class="d-flex flex-column">
-                    <div class="d-flex align-items-center mb-2" style="gap: 10px">
+                    <div class="d-flex align-items-center mb-2 gap-2">
                       <div>
-                        <input type="text" class="form-control" placeholder="Населенный пункт"
-                          style="font-size: 12px; width: 220px" />
+                        <input type="text" class="form-control" placeholder="Населенный пункт" style="width: 220px" />
                       </div>
                       <div>
                         <input type="text" class="form-control" placeholder="Адрес в населённом пункте"
-                          style="font-size: 12px; width: 220px" />
+                          style="width: 220px" />
                       </div>
                       <span class="form-label"
                         style="font-size: 12px; color: #838b94; line-height: 1.2; margin-bottom: 0">
@@ -328,16 +323,16 @@
                       </span>
                     </div>
 
-                    <div style='display: none;' id="date_time">
-                      <div class="d-flex" style='gap: 5px; font-size: 12px;'>
+                    <div class="d-none" id="date_time">
+                      <div class="d-flex" style="gap: 5px; font-size: 12px;">
                         <span id="close_date_time"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                         <label>
                           Дата и время
-                          <div class="d-flex" style="gap: 15px;">
-                            <div class="d-flex" style="gap: 10px;">
+                          <div class="d-flex mt-2" style="gap: 15px;">
+                            <div class="d-flex gap-2">
                               <div>
                                 <input type="date" class="form-control mb-2" placeholder="Выберите дату"
-                                  style="font-size: 12px; width: 180px" />
+                                  style="width: 180px" />
                                 <div>
                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                   <span>диапазон</span>
@@ -345,11 +340,11 @@
                               </div>
                             </div>
                             <div>
-                              <div class="d-flex align-items-center mb-2" style="gap: 10px;">
+                              <div class="d-flex align-items-center mb-2 gap-2">
                                 <input id="appointment-time" type="time" name="appointment-time" class="form-control"
-                                  placeholder="00:00" style="font-size: 12px; width: 80px" /> -
+                                  placeholder="00:00" style="width: 80px" /> -
                                 <input id="appointment-time" type="time" name="appointment-time" class="form-control"
-                                  placeholder="00:00" style="font-size: 12px; width: 80px" />
+                                  placeholder="00:00" style="width: 80px" />
                               </div>
                               <div>
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -373,7 +368,7 @@
                 </div>
                 <div class="mb-3 d-flex justify-content-between">
                   <div class="d-flex">
-                    <h4 class="ms-2" style="width: 10%; font-size: 14px;">Маршрут</h4>
+                    <h4 class="ms-2" style="width: 10%; font-size: 14px; font-weight: 700;">Маршрут</h4>
                   </div>
                   <div style="width: 80%; gap: 5px" class="d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -512,17 +507,16 @@
                   </div>
 
                   <div style="font-size: 12px;">
-                    <div style="display: none;" id="num_cars">
+                    <div class="d-none" id="num_cars">
                       <div class="d-flex mt-3">
                         <div style="width: 150px;">
                           <span id="close_num_cars"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                           <span>Кол-во машин</span>
                         </div>
-                        <input type="text" class="form-control" value="1" placeholder="м"
-                          style="font-size: 12px; width: 60px" />
+                        <input type="text" class="form-control" value="1" placeholder="м" style="width: 60px" />
                       </div>
                     </div>
-                    <div style="display: none;" id="crew">
+                    <div class="d-none" id="crew">
                       <div class="d-flex mt-3">
                         <div style="width: 150px;">
                           <span id="close_crew"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
@@ -531,21 +525,20 @@
                         <span>Требуется 2 водителя</span>
                       </div>
                     </div>
-                    <div style="display: none;" id="adr">
+                    <div class="d-none" id="adr">
                       <div class="d-flex align-items-center mt-3">
                         <div style="width: 150px;">
                           <span id="close_adr"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                           <span>ADR</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="1-9"
-                          style="font-size: 12px; width: 60px" />
+                        <input type="text" class="form-control" placeholder="1-9" style="width: 60px" />
                         <span style="color: #838b94; margin-left: 10px">
                           Класс опасности груза
                           <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </span>
                       </div>
                     </div>
-                    <div style="display: none;" id="trailer_setup">
+                    <div class="d-none" id="trailer_setup">
                       <div class="d-flex align-items-center mt-3">
                         <div style="width: 150px;">
                           <span id="close_trailer_setup"><i class="fa-solid fa-xmark"
@@ -553,67 +546,67 @@
                           <span>Требования</span>
                         </div>
                         <div class="d-flex" style="gap: 50px;">
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>Сцепка</span>
                           </div>
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>Пневмоход</span>
                           </div>
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>Коники</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div style="display: none;" id="tir">
+                    <div class="d-none" id="tir">
                       <div class="d-flex align-items-center mt-3">
                         <div style="width: 150px;">
                           <span id="close_tir"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                           <span>Разрешения</span>
                         </div>
                         <div class="d-flex" style="gap: 50px;">
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>TIR</span>
                             <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
                           </div>
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>T1</span>
                             <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
                           </div>
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>CMR</span>
                             <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
                           </div>
-                          <div style="gap: 10px;">
+                          <div class="gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>Медкнижка</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div style="display: none;" id="belts">
+                    <div class="d-none" id="belts">
                       <div class="d-flex mt-3">
                         <div style="width: 150px;">
                           <span id="close_belts"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                           <span>Ремней</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="шт" style="font-size: 12px; width: 60px" />
+                        <input type="text" class="form-control" placeholder="шт" style="width: 60px" />
                       </div>
                     </div>
 
-                    <div style="display: none;" id="capacity">
+                    <div class="d-none" id="capacity">
                       <div class="d-flex mt-3">
                         <div style="width: 150px;">
                           <span id="close_capacity"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                           <span>Грузоподъемность</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="т" style="font-size: 12px; width: 60px" />
+                        <input type="text" class="form-control" placeholder="т" style="width: 60px" />
                         <span style="color: #838b94; margin-left: 10px">
                           Выберите или введите требуемую грузоподъемность ТС
                         </span>
@@ -673,14 +666,14 @@
                     <span id="torg_text">Участники ATI.SU увидят, что возможен торг, и смогут
                       предложить свою
                       ставку</span>
-                    <span id="no_torg_text" style="display: none;">Участники ATI.SU смогут предлагать свои услуги только
+                    <span id="no_torg_text" class="d-none">Участники ATI.SU смогут предлагать свои услуги только
                       по вашей ставке</span>
                     <div class="mt-3">
                       <div class="d-flex">
                         <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
                         <h4 class="ms-2" style="width: 20%; font-size: 14px; font-weight: 700;">Ставка</h4>
                       </div>
-                      <div class="mb-3 d-flex" style="gap: 10px;">
+                      <div class="mb-3 d-flex gap-2">
                         <div style="width: 128px;">
                           <span>С НДС, безнал</span>
                         </div>
@@ -690,39 +683,39 @@
                           <option value="value2">руб</option>
                         </select>
                       </div>
-                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div class="mb-3 d-flex align-items-center gap-2">
                         <div style="width: 128px;">
                           <span>Без НДС, безнал</span>
                         </div>
                         <input type="text" class="form-control" style="width: 150px;">
                         <span>кырг.сом</span>
                       </div>
-                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div class="mb-3 d-flex align-items-center gap-2">
                         <div style="width: 128px;">
                           <span>Наличными</span>
                         </div>
-                        <div class="d-flex flex-column">
-                          <div class="d-flex align-items-center" style="gap: 10px;">
+                        <div class="d-flex flex-column gap-2">
+                          <div class="d-flex align-items-center gap-2">
                             <input type="text" class="form-control" style="width: 150px;">
                             <span>кырг.сом</span>
                           </div>
-                          <div class="d-flex" style="gap: 10px;">
+                          <div class="d-flex gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>на карту</span>
                           </div>
                         </div>
                       </div>
-                      <div class="d-flex" style="gap: 10px;">
+                      <div class="d-flex gap-2">
                         <div style="width: 128px;">
                           <span>Встречные предложения</span>
                         </div>
                         <div>
-                          <div class="d-flex" style="gap: 10px;">
+                          <div class="d-flex gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>видны только вам</span>
                           </div>
                           <div id="torg">
-                            <div class="d-flex align-items-center" style="gap: 10px;">
+                            <div class="d-flex align-items-center gap-2">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                               <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
                               <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
@@ -733,28 +726,28 @@
                     </div>
                   </div>
 
-                  <div id="zapros_wrap" style="display: none;">
+                  <div id="zapros_wrap" class="d-none">
                     <span>Участники ATI.SU смогут предложить свою ставку</span>
                     <div class="mt-3">
-                      <div class="mb-3 d-flex" style="gap: 10px;">
+                      <div class="mb-3 d-flex gap-2">
                         <div style="width: 128px;">
                           <span>Можно предлагать</span>
                         </div>
                         <div class="d-flex flex-column">
                           <div class="d-flex flex-column">
-                            <div class="d-flex" style="gap: 10px;">
+                            <div class="d-flex gap-2">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                               <span>С НДС, безнал</span>
                             </div>
                           </div>
                           <div class="d-flex flex-column">
-                            <div class="d-flex" style="gap: 10px;">
+                            <div class="d-flex gap-2">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                               <span>Без НДС, безнал</span>
                             </div>
                           </div>
                           <div class="d-flex flex-column">
-                            <div class="d-flex" style="gap: 10px;">
+                            <div class="d-flex gap-2">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                               <span>Наличными</span>
                             </div>
@@ -762,17 +755,17 @@
                         </div>
 
                       </div>
-                      <div class="d-flex" style="gap: 10px;">
+                      <div class="d-flex gap-2">
                         <div style="width: 128px;">
                           <span>Встречные предложения</span>
                         </div>
                         <div>
-                          <div class="d-flex" style="gap: 10px;">
+                          <div class="d-flex gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>видны только вам</span>
                           </div>
                           <div>
-                            <div class="d-flex align-items-center" style="gap: 10px;">
+                            <div class="d-flex align-items-center gap-2">
                               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                               <span>через 30 минут предложить груз участнику с лучшей ставкой.</span>
                               <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
@@ -783,10 +776,10 @@
                     </div>
                   </div>
 
-                  <div id="torgi_wrap" style="display: none; font-size: 12px;">
+                  <div id="torgi_wrap" class="d-none" style="font-size: 12px;">
                     <span>Участники ATI.SU будут соревноваться, предлагая наиболее выгодную ставку</span>
                     <div class="mt-3">
-                      <div class="mb-3 d-flex" style="gap: 10px;">
+                      <div class="mb-3 d-flex gap-2">
                         <div class="d-flex" style="width: 128px; gap: 5px;">
                           <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
                           <span>Начальная ставка</span>
@@ -802,7 +795,7 @@
                           <option value="value2">руб</option>
                         </select>
                       </div>
-                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div class="mb-3 d-flex align-items-center gap-2">
                         <div class="d-flex" style="width: 128px; gap: 5px;">
                           <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
                           <span>Шаг</span>
@@ -812,13 +805,13 @@
                           style="font-size: 12px; color: #838b94; line-height: 1.2; width: 200px">На
                           столько уменьшится ставка после отклика перевозчика</span>
                       </div>
-                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div class="mb-3 d-flex align-items-center gap-2">
                         <div class="d-flex" style="width: 128px; gap: 5px;">
                           <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
                           <span>Длительность Торгов</span>
                         </div>
                         <div class="d-flex flex-column">
-                          <div class="d-flex align-items-center mb-2" style="gap: 10px;">
+                          <div class="d-flex align-items-center mb-2 gap-2">
                             <select class="form-control" style="width: 200px; font-size: 12px">
                               <option value="value1" selected>4 часа</option>
                               <option value="value2">5 часов</option>
@@ -828,7 +821,7 @@
                               <option value="value2">с момента первой ставки</option>
                             </select>
                           </div>
-                          <div class="d-flex" style="gap: 10px;">
+                          <div class="d-flex gap-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <span>Включить aнтиснайпер продлит торги на 20 секунд, если ставка сделана в последние 20
                               секунд</span>
@@ -836,7 +829,7 @@
                         </div>
                       </div>
 
-                      <div id="ptedlojenie" style="display: none;">
+                      <div id="ptedlojenie" class="d-none">
                         <div class="d-flex  mt-3">
                           <div style="width: 130px;">
                             <span id="close_ptedlojenie"><i class="fa-solid fa-xmark"
@@ -845,7 +838,7 @@
                           </div>
                           <div class="d-flex flex-column mb-3">
                             <div>
-                              <div class="d-flex align-items-center mb-2" style="gap: 10px">
+                              <div class="d-flex align-items-center mb-2 gap-2">
                                 <select class="form-control" style="width: 150px; font-size: 12px">
                                   <option value="value1" selected>принимать сразу</option>
                                   <option value="value2">принимать через 15 мин</option>
@@ -853,11 +846,11 @@
                                 <span>после начала Торгов</span>
                               </div>
                               <div>
-                                <div class="d-flex" style="gap: 10px;">
+                                <div class="d-flex gap-2">
                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                   <span>до первой ставки</span>
                                 </div>
-                                <div class="d-flex" style="gap: 10px;">
+                                <div class="d-flex gap-2">
                                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                   <span>встречные предложения видны только вам</span>
                                 </div>
@@ -868,13 +861,13 @@
                         </div>
                       </div>
 
-                      <div id="prodlrnie" style="display: none;">
+                      <div id="prodlrnie" class="d-none">
                         <div class="d-flex  mt-3">
                           <div style="width: 130px;">
                             <span id="close_prodlrnie"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                             <span>Автопродление</span>
                           </div>
-                          <div class="d-flex mb-3" style="gap: 10px;">
+                          <div class="d-flex mb-3 gap-2">
                             <label class="mb-3">
                               <div class="d-flex" style="gap: 5px;">
                                 <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
@@ -901,13 +894,13 @@
                         </div>
                       </div>
 
-                      <div id="stavka" style="display: none;">
+                      <div id="stavka" class="d-none">
                         <div class="d-flex  mt-3">
                           <div style="width: 130px;">
                             <span id="close_stavka"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                             <span>Повышение ставки</span>
                           </div>
-                          <div class="d-flex mb-3" style="gap: 10px;">
+                          <div class="d-flex mb-3 gap-2">
                             <label class="mb-3">
                               <div class="d-flex" style="gap: 5px;">
                                 <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
@@ -932,12 +925,12 @@
                         </div>
                       </div>
 
-                      <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                      <div class="mb-3 d-flex align-items-center gap-2">
                         <div class="d-flex" style="width: 128px; gap: 5px;">
                           <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
                           <span>Выбрать победителя</span>
                         </div>
-                        <div class="d-flex flex-column" style="gap: 10px;">
+                        <div class="d-flex flex-column gap-2">
                           <div>
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                             <span>по лучшей ставке</span>
@@ -974,17 +967,78 @@
                 </div>
                 <hr />
 
+                <div id="the_end_torg" class="d-none">
+                  <div class="mb-3 d-flex justify-content-between flex-column gap-2" style="font-size: 12px;">
+                    <span>После окончания Торгов</span>
+
+                    <div class="the-end-torg-wrap d-flex flex-column gap-2">
+                      <div class="d-flex align-items-center gap-2">
+                        <span>Победитель должен предоставить документы за</span>
+                        <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px; "></i>
+                        <input type="text" class="form-control" style="width: 70px; font-size: 12px;" value="3"
+                          placeholder="ч.">
+                        <span>, иначе считаем, что победитель отказался от груза;</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>Автоматически назначать следующего победителя</span>
+                        <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                        <select name="select" class="form-control" style="height: 32px; width:70px; font-size: 12px;">
+                          <option value="value1">1 раза</option>
+                          <option value="value2">2 раза</option>
+                          <option value="value2" selected>3 раза</option>
+                        </select>
+                        <span>
+                          <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
+                          , если победитель отказался от грузая
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="the-end-torg-wrap d-flex flex-column gap-2">
+                      <div class="d-flex align-items-center gap-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <span>Перезапускать Торги</span>
+                        <select name="select" class="form-control" style="height: 32px; width:70px; font-size: 12px;">
+                          <option value="value1">1 раза</option>
+                          <option value="value2">2 раза</option>
+                          <option value="value2" selected>3 раза</option>
+                        </select>
+                        <span>, если победителя нет</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <span>Длительность Торгов после перезапуска</span>
+                        <select name="select" class="form-control" style="height: 32px; width:70px; font-size: 12px;">
+                          <option value="value1">1 часа</option>
+                          <option value="value2">2 часа</option>
+                          <option value="value2" selected>4 часа</option>
+                        </select>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <span>Увеличить начальную ставку торгов после перезапуска на</span>
+                        <input type="text" class="form-control" style="width: 70px; font-size: 12px;">
+                        <select name="select" class="form-control" style="height: 32px; width:70px; font-size: 12px;">
+                          <option value="value1" selected>сом</option>
+                          <option value="value2">%</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+
+
                 <div class="mb-3 d-flex justify-content-between flex-column" style="font-size: 12px;">
-                  <div class=" d-flex" style="gap: 10px;">
+                  <div class="d-flex gap-2">
                     <div style="width: 128px;">
                       <span>Оплата через</span>
                     </div>
                     <div>
-                      <div class="d-flex align-items-center" style="gap: 10px;">
+                      <div class="d-flex align-items-center gap-2">
                         <input type="text" class="form-control" style="width: 70px;">
                         <span>банковских дней</span>
                       </div>
-                      <div class="mb-3 d-flex mt-2" style="gap: 10px;">
+                      <div class="mb-3 d-flex mt-2 gap-2">
                         <span class="blue_span">3 дн.</span>
                         <span class="blue_span">5 дн.</span>
                         <span class="blue_span">7 дн.</span>
@@ -992,7 +1046,7 @@
                     </div>
                   </div>
 
-                  <div id="predoplata" style="display: none;">
+                  <div id="predoplata" class="d-none">
                     <div class="d-flex  mt-3">
                       <div style="width: 128px;">
                         <span id="close_predoplata"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
@@ -1001,11 +1055,11 @@
                       <div class="d-flex flex-column mb-3">
                         <input type="text" class="form-control mb-1" value="1" placeholder="%"
                           style="font-size: 12px; width: 70px" />
-                        <div class="d-flex" style="gap: 10px;">
+                        <div class="d-flex gap-2">
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                           <span>Предоплата топливом</span>
                         </div>
-                        <div class="d-flex" style="gap: 10px;">
+                        <div class="d-flex gap-2">
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                           <span>Оплата на выгрузке (скрывает оплату через)</span>
                         </div>
@@ -1014,20 +1068,20 @@
                     </div>
                   </div>
 
-                  <div id="dogovor" style="display: none;">
+                  <div id="dogovor" class="d-none">
                     <div class="d-flex mt-3">
                       <div style="width: 128px;">
                         <span id="close_dogovor"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
                         <span>Прямой договор</span>
                       </div>
-                      <div class="d-flex" style="gap: 10px;">
+                      <div class="d-flex gap-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <span>Заключаю договор с перевозчиком от своей фирмы</span>
                       </div>
                     </div>
                   </div>
 
-                  <div class="d-flex mt-3" style="gap: 10px;">
+                  <div class="d-flex mt-3 gap-2">
                     <div style="width: 128px;">
                       <span>Добавить</span>
                     </div>
@@ -1051,7 +1105,7 @@
 
                 <div class="mb-3 d-flex justify-content-between flex-column" style="font-size: 12px;">
                   <div class="mt-3">
-                    <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
+                    <div class="mb-3 d-flex align-items-center gap-2">
                       <div style="width: 128px;">
                         <span>Контакты</span>
                       </div>
@@ -1060,7 +1114,7 @@
                         <input type="text" class="form-control" style="width: 500px;">
                       </div>
                     </div>
-                    <div class="mb-3 d-flex" style="gap: 10px;">
+                    <div class="mb-3 d-flex gap-2">
                       <div style="width: 128px;">
                         <span>Примечание</span>
                       </div>
@@ -1073,7 +1127,7 @@
                     </div>
 
 
-                    <div id="num_gruz" style="display: none;">
+                    <div id="num_gruz" class="d-none">
                       <div class="d-flex  mt-3">
                         <div style="width: 128px;">
                           <span id="close_num_gruz"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
@@ -1089,7 +1143,7 @@
                       </div>
                     </div>
 
-                    <div id="foto_gruz" style="display: none;">
+                    <div id="foto_gruz" class="d-none">
                       <div class="d-flex  mt-3">
                         <div style="width: 128px;">
                           <span id="close_foto_gruz"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
@@ -1102,7 +1156,7 @@
                       </div>
                     </div>
 
-                    <div class="d-flex" style="gap: 10px;">
+                    <div class="d-flex gap-2">
                       <div style="width: 128px;">
                         <span>Добавить</span>
                       </div>
@@ -1249,7 +1303,9 @@
       });
 
 
-      let isBidActive = false
+      //$('#gruz_btn').click(function () {
+      //  $('#gruz').hide()
+      //})
 
       const sections = [
         {
@@ -1349,26 +1405,26 @@
         }
       ];
 
-      sections.forEach((item) => $(`#${item.id}`).hide())
+      sections.forEach((item) => $(`#${item.id}`).addClass('d-none'))
 
       sections.forEach((item) => {
         $(`#${item.btnId}`).click(function () {
-          $(this).hide();
-          $(`#${item.id}`).show();
+          $(this).addClass('d-none');
+          $(`#${item.id}`).removeClass('d-none');
         });
 
         $(`#${item.closeId}`).click(function () {
-          $(`#${item.id}`).hide();
-          $(`#${item.btnId}`).show();
+          $(`#${item.id}`).addClass('d-none');
+          $(`#${item.btnId}`).removeClass('d-none');
         });
       })
 
       $('#predoplata_btn').click(function () {
-        $('#oplata_btn').hide()
+        $('#oplata_btn').addClass('d-none')
       })
 
       $('#oplata_btn').click(function () {
-        $('#predoplata_btn').hide()
+        $('#predoplata_btn').addClass('d-none')
       })
 
       $('#torg_btn').addClass('bid_btn_active');
@@ -1379,30 +1435,30 @@
       })
 
       const showBlocks = (toShow = [], toHide = []) => {
-        toShow.forEach(id => $(`#${id}`).show())
-        toHide.forEach(id => $(`#${id}`).hide())
+        toShow.forEach(id => $(`#${id}`).removeClass('d-none'))
+        toHide.forEach(id => $(`#${id}`).addClass('d-none'))
       }
 
       $('#torg_btn').on('click', () => {
         showBlocks(
           ['torg', 'torg_text', 'torg_wrap'],
-          ['no_torg_text', 'zapros_wrap', 'torgi_wrap']
+          ['no_torg_text', 'zapros_wrap', 'torgi_wrap', 'the_end_torg']
         )
       })
 
       $('#no_torg_btn').on('click', () => {
         showBlocks(
           ['no_torg_text', 'torg_wrap'],
-          ['torg', 'torg_text', 'zapros_wrap', 'torgi_wrap']
+          ['torg', 'torg_text', 'zapros_wrap', 'torgi_wrap', 'the_end_torg']
         )
       })
 
       $('#zapros_btn').on('click', () => {
-        showBlocks(['zapros_wrap'], ['torg_wrap', 'torgi_wrap'])
+        showBlocks(['zapros_wrap'], ['torg_wrap', 'torgi_wrap', 'the_end_torg'])
       })
 
       $('#torgi_btn').on('click', () => {
-        showBlocks(['torgi_wrap'], ['torg_wrap', 'zapros_wrap'])
+        showBlocks(['torgi_wrap', , 'the_end_torg'], ['torg_wrap', 'zapros_wrap'])
       })
     });
   </script>

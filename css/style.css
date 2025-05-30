@@ -2,6 +2,15 @@ body {
   overflow-x: hidden;
 }
 
+input {
+  font-size: 12px !important;
+}
+
+select {
+  font-size: 12px !important;
+}
+
+/* темная тема */
 .dark-theme .header {
   background-color: #091829;
   color: #cdd1d4;
@@ -28,6 +37,7 @@ body {
 
 .dark-theme .car-carcase {
   background-color: #091829;
+  border: 1px solid #505c68;
 }
 
 .dark-theme .summary {
@@ -36,6 +46,17 @@ body {
 
 .dark-theme .form-control {
   background-color: #091829;
+  border: 1px solid #505c68;
+  color: #c5cace;
+}
+
+.dark-theme .form-check-input {
+  background-color: #091829;
+  border: 1px solid #505c68;
+}
+
+.dark-theme .the-end-torg-wrap {
+  background-color: #0d1e2e;
 }
 
 /* Header Styles */
@@ -104,7 +125,6 @@ body {
   height: 96.5%;
   margin-left: -450px;
   overflow-y: auto;
-  /* background-color: #e6e8ea !important; */
   background-color: #dddfe1 !important;
 
   -webkit-transition: all 0.5s ease;
@@ -147,7 +167,6 @@ body {
 
 .sidebar-nav li {
   text-indent: 20px;
-  /* line-height: 40px; */
   padding: 10px 5px 10px 0;
 }
 
@@ -316,6 +335,12 @@ body {
   background-color: transparent;
 }
 
+.the-end-torg-wrap {
+  background-color: #f9f9fa;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
 @media (min-width: 768px) {
   #wrapper {
     padding-left: 300px;
@@ -336,6 +361,7 @@ body {
   #wrapper.toggled span {
     /* visibility: hidden; */
   }
+
   #wrapper.toggled i {
     float: right;
   }

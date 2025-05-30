@@ -2,6 +2,42 @@ body {
   overflow-x: hidden;
 }
 
+.dark-theme .header {
+  background-color: #091829;
+  color: #cdd1d4;
+}
+
+.dark-theme .nav {
+  background-color: #0d3052;
+  color: #cdd1d4;
+}
+
+.dark-theme .nav a {
+  background-color: #1c433d;
+  color: #cdd1d4;
+}
+
+.dark-theme .main {
+  background-color: #0d1e2e;
+  color: #cdd1d4;
+}
+
+.dark-theme .form_wrap {
+  background-color: #091829;
+}
+
+.dark-theme .car-carcase {
+  background-color: #091829;
+}
+
+.dark-theme .summary {
+  background-color: #091829;
+}
+
+.dark-theme .form-control {
+  background-color: #091829;
+}
+
 /* Header Styles */
 .header {
   display: flex;
@@ -37,7 +73,6 @@ body {
   padding: 0 20px;
   background-color: #d3ee78;
   font-size: 12px;
-  transition: background-color 0.3s ease;
 }
 
 .nav a:hover {
@@ -156,6 +191,18 @@ body {
 }
 
 /* Page-content Styles */
+.main {
+  background-color: #f9f9fa;
+  padding: 50px 0;
+}
+
+.form_wrap {
+  width: 70%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .no-content {
   height: 80vh;
   width: 100%;
@@ -246,6 +293,23 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.blue_span {
+  color: #2277cc;
+  cursor: pointer;
+}
+
+.blue_span:hover {
+  text-decoration: underline;
+}
+
+.form-control {
+  color: #505c68;
+}
+
+.form-control:focus {
+  background-color: transparent;
 }
 
 @media (min-width: 768px) {

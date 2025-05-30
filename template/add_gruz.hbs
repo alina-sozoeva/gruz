@@ -52,7 +52,7 @@
       </div>
     </header>
     <div>
-      <div style="background-color: #f9f9fa; padding: 50px 0;">
+      <div class="main">
         <div class="container">
           <!-- Page Content -->
           <section>
@@ -79,7 +79,7 @@
             </div>
 
             <div class="d-flex align-items-center justify-content-between; " style="position: relative;">
-              <div class="mt-4" style="width: 70%; background-color: white; padding: 20px; border-radius: 10px">
+              <div class="form_wrap mt-4">
                 <div class="d-flex justify-content-between">
                   <div class="d-flex">
                     <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
@@ -96,7 +96,7 @@
                         <input type="text" class="form-control" placeholder="Вес" style="font-size: 12px; width:70px" />
                       </div>
                       <div>
-                        <select name="select"
+                        <select name="select" class="form-control"
                           style="height: 32px; border: 1px solid #ced4da; width:70px; font-size: 12px;">
                           <option value="value1" selected>т</option>
                           <option value="value2">кг</option>
@@ -207,7 +207,7 @@
                   <div style="width: 80%;" class="d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center mb-2" style="gap: 10px">
                       <div>
-                        <select name="select"
+                        <select name="select" class="form-control"
                           style="height: 32px; border: 1px solid #ced4da; width:220px; font-size: 12px;">
                           <option value="value1" selected>Готов к загрузке</option>
                           <option value="value2">Постоянно</option>
@@ -220,8 +220,8 @@
                       </div>
                       +
                       <div>
-                        <select name="select"
-                          style="height: 32px; border: 1px solid #ced4da; width:70px; font-size: 12px;">
+                        <select name="select" class="form-control"
+                          style="height: 32px; border: 1px solid #ced4da; width:70px; font-size: 12px; color:#505c69">
                           <option value="value1" selected>0 дн.</option>
                           <option value="value2">1 дн.</option>
                           <option value="value3">2 дн.</option>
@@ -286,19 +286,19 @@
                     </div>
                     <div class="mb-3 d-flex" style="font-size: 12px;">
                       <span>Добавить точку маршрута:</span>
-                      <div class="ms-2" style="color: #2277cc;">
+                      <div class="blue_span ms-2">
                         <i class="fa-solid fa-circle-plus"></i>
                         <span>Загрузка</span>
                       </div>
-                      <div class="ms-2" style="color: #2277cc;">
+                      <div class="blue_span ms-2">
                         <i class="fa-solid fa-circle-plus"></i>
                         <span>Разгрузка</span>
                       </div>
-                      <div class="ms-2" style="color: #2277cc;">
+                      <div class="blue_span ms-2">
                         <i class="fa-solid fa-circle-plus"></i>
                         <span>Ехать через</span>
                       </div>
-                      <div class="ms-2" style="color: #2277cc;">
+                      <div class="blue_span ms-2">
                         <i class="fa-solid fa-circle-plus"></i>
                         <span>Таможня</span>
                       </div>
@@ -505,7 +505,7 @@
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <span>запросить у перевозчика GPS-мониторинг груза с помощью бесплатного сервиса</span>
                       </div>
-                      <div style="background-color: #fef7e7; padding:  5px 10px">
+                      <div style=" padding:  5px 10px">
                         <span>Убедитесь, что адрес заполнен. Так водитель будет знать, куда ехать</span>
                       </div>
                     </div>
@@ -835,6 +835,103 @@
                           </div>
                         </div>
                       </div>
+
+                      <div id="ptedlojenie" style="display: none;">
+                        <div class="d-flex  mt-3">
+                          <div style="width: 130px;">
+                            <span id="close_ptedlojenie"><i class="fa-solid fa-xmark"
+                                style="font-size: 16px;"></i></span>
+                            <span>Встречные предложения</span>
+                          </div>
+                          <div class="d-flex flex-column mb-3">
+                            <div>
+                              <div class="d-flex align-items-center mb-2" style="gap: 10px">
+                                <select class="form-control" style="width: 150px; font-size: 12px">
+                                  <option value="value1" selected>принимать сразу</option>
+                                  <option value="value2">принимать через 15 мин</option>
+                                </select>
+                                <span>после начала Торгов</span>
+                              </div>
+                              <div>
+                                <div class="d-flex" style="gap: 10px;">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <span>до первой ставки</span>
+                                </div>
+                                <div class="d-flex" style="gap: 10px;">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <span>встречные предложения видны только вам</span>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="prodlrnie" style="display: none;">
+                        <div class="d-flex  mt-3">
+                          <div style="width: 130px;">
+                            <span id="close_prodlrnie"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                            <span>Автопродление</span>
+                          </div>
+                          <div class="d-flex mb-3" style="gap: 10px;">
+                            <label class="mb-3">
+                              <div class="d-flex" style="gap: 5px;">
+                                <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                                <span>продлевать на</span>
+                              </div>
+                              <input type="text" class="form-control" value="10" placeholder="мин"
+                                style="font-size: 12px; width: 150px" />
+                            </label>
+                            <label class="mb-3">
+                              <div class="d-flex" style="gap: 5px;">
+                                <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                                <span>не более чем на</span>
+                              </div>
+                              <input type="text" class="form-control" value="60" placeholder="мин"
+                                style="font-size: 12px; width: 150px" />
+                            </label>
+                            <span class="form-label"
+                              style="font-size: 12px; color: #838b94; line-height: 1.2; width: 200px; padding-top: 18px;">Продлит
+                              Торги,
+                              если ставка
+                              сделана в последние 5 минут</span>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="stavka" style="display: none;">
+                        <div class="d-flex  mt-3">
+                          <div style="width: 130px;">
+                            <span id="close_stavka"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                            <span>Повышение ставки</span>
+                          </div>
+                          <div class="d-flex mb-3" style="gap: 10px;">
+                            <label class="mb-3">
+                              <div class="d-flex" style="gap: 5px;">
+                                <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                                <span>продлевать на</span>
+                              </div>
+                              <input type="text" class="form-control" placeholder="мин"
+                                style="font-size: 12px; width: 150px" />
+                            </label>
+                            <label class="mb-3">
+                              <div class="d-flex" style="gap: 5px;">
+                                <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
+                                <span>не более чем на</span>
+                              </div>
+                              <input type="text" class="form-control" placeholder="руб"
+                                style="font-size: 12px; width: 150px" />
+                            </label>
+                            <span class="form-label"
+                              style="font-size: 12px; color: #838b94; line-height: 1.2; width: 250px; padding-top: 18px;">Продлит
+                              Повысит ставку на шаг, если нет предложений
+                              Укажите шаг</span>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="mb-3 d-flex align-items-center" style="gap: 10px;">
                         <div class="d-flex" style="width: 128px; gap: 5px;">
                           <i class="fa-solid fa-star-of-life" style="color: red; font-size: 6px;"></i>
@@ -852,19 +949,20 @@
                           </div>
                         </div>
                       </div>
+
                       <div class="mt-3 d-flex" style="font-size: 12px;">
                         <span style="width: 128px; ">Добавить</span>
                         <div class="d-flex flex-column">
                           <div class="mb-3">
-                            <button class="form-btn" id="num_cars_btn">
+                            <button class="form-btn" id="ptedlojenie_btn">
                               <i class="fa-solid fa-plus"></i>
                               Встречные предложения
                             </button>
-                            <button class="form-btn" id="crew_btn">
+                            <button class="form-btn" id="prodlrnie_btn">
                               <i class="fa-solid fa-plus"></i>
                               Автопродление
                             </button>
-                            <button class="form-btn" id="adr_btn">
+                            <button class="form-btn" id="stavka_btn">
                               <i class="fa-solid fa-plus"></i>
                               Повышение ставки
                             </button>
@@ -887,9 +985,9 @@
                         <span>банковских дней</span>
                       </div>
                       <div class="mb-3 d-flex mt-2" style="gap: 10px;">
-                        <span style="color: #2277cc;">3 дн.</span>
-                        <span style="color: #2277cc;">5 дн.</span>
-                        <span style="color: #2277cc;">7 дн.</span>
+                        <span class="blue_span">3 дн.</span>
+                        <span class="blue_span">5 дн.</span>
+                        <span class="blue_span">7 дн.</span>
                       </div>
                     </div>
                   </div>
@@ -973,16 +1071,47 @@
                       </div>
 
                     </div>
+
+
+                    <div id="num_gruz" style="display: none;">
+                      <div class="d-flex  mt-3">
+                        <div style="width: 128px;">
+                          <span id="close_num_gruz"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>№ груза или заказа</span>
+                        </div>
+                        <div class="d-flex flex-column mb-3">
+                          <input type="text" class="form-control mb-1" style="font-size: 12px; width: 470px" />
+                          <span style="color: #838b94; width: 410px;">По этому номеру груз можно найти в Ваших грузах <i
+                              class="fa-solid fa-arrow-up-right-from-square"></i> и
+                            Заказах <i class="fa-solid fa-arrow-up-right-from-square"></i>. Номер
+                            виден только вашим сотрудникам и исполнителю Заказа.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="foto_gruz" style="display: none;">
+                      <div class="d-flex  mt-3">
+                        <div style="width: 128px;">
+                          <span id="close_foto_gruz"><i class="fa-solid fa-xmark" style="font-size: 16px;"></i></span>
+                          <span>Фото груза и документов</span>
+                        </div>
+                        <div class="d-flex flex-column mb-3">
+                          <input style="width: 470px;" class="form-control form-control-sm mb-1" id="formFileSm"
+                            type="file">
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="d-flex" style="gap: 10px;">
                       <div style="width: 128px;">
                         <span>Добавить</span>
                       </div>
                       <div>
-                        <button class="form-btn">
+                        <button class="form-btn" id="num_gruz_btn">
                           <i class="fa-solid fa-plus"></i>
                           № груза или заказа
                         </button>
-                        <button class="form-btn">
+                        <button class="form-btn" id="foto_gruz_btn">
                           <i class="fa-solid fa-plus"></i>
                           Фото
                         </button>
@@ -1048,7 +1177,7 @@
                     Опубликовать груз
                   </button>
                   <div style="text-align: center;">
-                    <span style="color: #2277cc;">Сохранить как шаблон</span>
+                    <span class="blue_span">Сохранить как шаблон</span>
                     <i class="fa-solid fa-circle-question" style="color: #b5babf"></i>
                   </div>
 
@@ -1106,6 +1235,19 @@
   <script src="js/main.js"></script>
   <script>
     $(document).ready(function () {
+
+      $('#flexSwitchCheckDefault').change(function () {
+        const isDark = $(this).is(':checked');
+        $('body').toggleClass('dark-theme', isDark);
+        localStorage.setItem('darkMode', isDark);
+      });
+
+      $(document).ready(function () {
+        const savedTheme = localStorage.getItem('darkMode') === 'true';
+        $('body').toggleClass('dark-theme', savedTheme);
+        $('#flexSwitchCheckDefault').prop('checked', savedTheme);
+      });
+
 
       let isBidActive = false
 
@@ -1179,6 +1321,31 @@
           id: 'dogovor',
           btnId: 'dogovor_btn',
           closeId: 'close_dogovor',
+        },
+        {
+          id: 'num_gruz',
+          btnId: 'num_gruz_btn',
+          closeId: 'close_num_gruz',
+        },
+        {
+          id: 'foto_gruz',
+          btnId: 'foto_gruz_btn',
+          closeId: 'close_foto_gruz',
+        },
+        {
+          id: 'ptedlojenie',
+          btnId: 'ptedlojenie_btn',
+          closeId: 'close_ptedlojenie',
+        },
+        {
+          id: 'prodlrnie',
+          btnId: 'prodlrnie_btn',
+          closeId: 'close_prodlrnie',
+        },
+        {
+          id: 'stavka',
+          btnId: 'stavka_btn',
+          closeId: 'close_stavka',
         }
       ];
 
@@ -1194,6 +1361,14 @@
           $(`#${item.id}`).hide();
           $(`#${item.btnId}`).show();
         });
+      })
+
+      $('#predoplata_btn').click(function () {
+        $('#oplata_btn').hide()
+      })
+
+      $('#oplata_btn').click(function () {
+        $('#predoplata_btn').hide()
       })
 
       $('#torg_btn').addClass('bid_btn_active');
@@ -1229,11 +1404,7 @@
       $('#torgi_btn').on('click', () => {
         showBlocks(['torgi_wrap'], ['torg_wrap', 'zapros_wrap'])
       })
-
-
     });
-
-
   </script>
 </body>
 

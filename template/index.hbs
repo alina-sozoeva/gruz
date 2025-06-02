@@ -9,17 +9,7 @@
 
   <!-- CSS here -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/animate.min.css" />
-  <link rel="stylesheet" href="css/magnific-popup.css" />
-  <link rel="stylesheet" href="fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="css/dripicons.css" />
-  <link rel="stylesheet" href="css/slick.css" />
-  <link rel="stylesheet" href="css/meanmenu.css" />
-  <link rel="stylesheet" href="css/aos.css" />
-  <link rel="stylesheet" href="css/swiper.min.css" />
-  <link rel="stylesheet" href="css/default.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/all.min.css" />
 </head>
 
@@ -239,12 +229,23 @@
                       <input type="text" class="form-control" placeholder="от" style="font-size: 12px; width: 60px" />
                       <input type="text" class="form-control" placeholder="до" style="font-size: 12px; width: 60px" />
                     </div>
-                    <div class="d-flex align-items-center" style="color: #2277cc; gap: 10px">
-                      <span>
-                        Ещё фильтры
-                      </span>
-                      <i class="fa-solid fa-angle-down"></i>
+                    <div id="dop_filter_btn_open">
+                      <div class="d-flex align-items-center" style="color: #2277cc; gap: 10px">
+                        <span>
+                          Ещё фильтры
+                        </span>
+                        <i class="fa-solid fa-angle-down"></i>
+                      </div>
                     </div>
+                    <div id="dop_filter_btn_close" class="d-none">
+                      <div class="d-flex align-items-center" style="color: #2277cc; gap: 10px">
+                        <span id="dop_filter_btn">
+                          Ещё фильтры
+                        </span>
+                        <i class="fa-solid fa-angle-up"></i>
+                      </div>
+                    </div>
+
                   </div>
 
                   <div class="d-flex align-items-center" style="gap: 10px;">
@@ -256,30 +257,33 @@
                 </div>
                 <hr style="margin: 5px 0;" />
 
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex align-items-center" style="gap: 10px;">
-                    <div class="d-flex align-items-center">
-                      <span class="me-2">Загрузка</span>
-                      <input type="text" class="form-control" placeholder="с" style="font-size: 12px; width: 60px" />
-                      <input type="text" class="form-control" placeholder="по" style="font-size: 12px; width: 60px" />
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <span class="me-2">Разгрузка</span>
-                      <input type="text" class="form-control" placeholder="с" style="font-size: 12px; width: 60px" />
-                      <input type="text" class="form-control" placeholder="по" style="font-size: 12px; width: 60px" />
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <span class="me-2">Торги</span>
-                      <select class="form-control" style="width: 160px; font-size: 12px">
-                        <option value="value1" selected>неважно</option>
-                        <option value="value2">неважно</option>
-                      </select>
-                    </div>
+                <div id="dop_filter" class="d-none">
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center" style="gap: 10px;">
+                      <div class="d-flex align-items-center">
+                        <span class="me-2">Загрузка</span>
+                        <input type="text" class="form-control" placeholder="с" style="font-size: 12px; width: 60px" />
+                        <input type="text" class="form-control" placeholder="по" style="font-size: 12px; width: 60px" />
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="me-2">Разгрузка</span>
+                        <input type="text" class="form-control" placeholder="с" style="font-size: 12px; width: 60px" />
+                        <input type="text" class="form-control" placeholder="по" style="font-size: 12px; width: 60px" />
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="me-2">Торги</span>
+                        <select class="form-control" style="width: 160px; font-size: 12px">
+                          <option value="value1" selected>неважно</option>
+                          <option value="value2">неважно</option>
+                        </select>
+                      </div>
 
+                    </div>
                   </div>
                 </div>
+
               </div>
-              <div class="main_table" style="padding: 10px ;">
+              <div class="main_table" style="padding: 10px;">
                 <div>
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   <span style="font-weight: 400; color: #838b94">Направл.</span>
@@ -557,6 +561,18 @@
         $("#wrapper").toggleClass("toggled");
       });
     });
+
+    $('#dop_filter_btn_open').click(function () {
+      $('#dop_filter').removeClass('d-none');
+      $('#dop_filter_btn_open').addClass('d-none')
+      $('#dop_filter_btn_close').removeClass('d-none')
+    })
+
+    $('#dop_filter_btn_close').click(function () {
+      $('#dop_filter').addClass('d-none');
+      $('#dop_filter_btn_close').addClass('d-none')
+      $('#dop_filter_btn_open').removeClass('d-none')
+    })
 
     const links = document.querySelectorAll('.sidebar-nav li a');
     const currentPath = window.location.pathname;

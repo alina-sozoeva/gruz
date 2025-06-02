@@ -9,22 +9,12 @@
 
   <!-- CSS here -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/animate.min.css" />
-  <link rel="stylesheet" href="css/magnific-popup.css" />
-  <link rel="stylesheet" href="fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="css/dripicons.css" />
-  <link rel="stylesheet" href="css/slick.css" />
-  <link rel="stylesheet" href="css/meanmenu.css" />
-  <link rel="stylesheet" href="css/aos.css" />
-  <link rel="stylesheet" href="css/swiper.min.css" />
-  <link rel="stylesheet" href="css/default.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/all.min.css" />
 </head>
 
 <body>
-  <main class="pt-105">
+  <main>
     <!-- Header -->
     <header class="header">
       <div class="nav">
@@ -1330,6 +1320,107 @@
   <script src="js/main.js"></script>
   <script>
     $(document).ready(function () {
+      const sections = [
+        {
+          id: 'quantity',
+          btnId: 'quantity_btn',
+          closeId: 'close_quantity',
+        },
+        {
+          id: 'dimensions',
+          btnId: 'dimensions_btn',
+          closeId: 'close_dimensions',
+        },
+        {
+          id: 'loading_time',
+          btnId: 'loading_time_btn',
+          closeId: 'close_loading_time',
+        },
+        {
+          id: 'date_time',
+          btnId: 'date_time_btn',
+          closeId: 'close_date_time',
+        },
+        {
+          id: 'num_cars',
+          btnId: 'num_cars_btn',
+          closeId: 'close_num_cars',
+        },
+        {
+          id: 'crew',
+          btnId: 'crew_btn',
+          closeId: 'close_crew',
+        },
+        {
+          id: 'adr',
+          btnId: 'adr_btn',
+          closeId: 'close_adr',
+        },
+        {
+          id: 'trailer_setup',
+          btnId: 'trailer_setup_btn',
+          closeId: 'close_trailer_setup',
+        },
+        {
+          id: 'tir',
+          btnId: 'tir_btn',
+          closeId: 'close_tir',
+        },
+        {
+          id: 'belts',
+          btnId: 'belts_btn',
+          closeId: 'close_belts',
+        },
+        {
+          id: 'capacity',
+          btnId: 'capacity_btn',
+          closeId: 'close_capacity',
+        },
+        {
+          id: 'predoplata',
+          btnId: 'predoplata_btn',
+          closeId: 'close_predoplata',
+        },
+        {
+          id: 'predoplata',
+          btnId: 'oplata_btn',
+          closeId: 'close_predoplata',
+        },
+        {
+          id: 'dogovor',
+          btnId: 'dogovor_btn',
+          closeId: 'close_dogovor',
+        },
+        {
+          id: 'num_gruz',
+          btnId: 'num_gruz_btn',
+          closeId: 'close_num_gruz',
+        },
+        {
+          id: 'foto_gruz',
+          btnId: 'foto_gruz_btn',
+          closeId: 'close_foto_gruz',
+        },
+        {
+          id: 'ptedlojenie',
+          btnId: 'ptedlojenie_btn',
+          closeId: 'close_ptedlojenie',
+        },
+        {
+          id: 'prodlrnie',
+          btnId: 'prodlrnie_btn',
+          closeId: 'close_prodlrnie',
+        },
+        {
+          id: 'stavka',
+          btnId: 'stavka_btn',
+          closeId: 'close_stavka',
+        }
+      ];
+
+
+      let gruzCount = 2;
+
       const html = `
         <div class="d-flex justify-content-between">
           <div class="d-flex">
@@ -1447,7 +1538,7 @@
               <span class="form-label" style="font-size: 12px; color: #838b94; line-height: 1.2;">
                 В расчёте на одну машину
               </span>
-              <span style="color: red;">
+              <span style="color: red;" id='close_load_dop_gruz'>
                 <i class="fa-solid fa-trash"></i>
               </span>
             </div>
@@ -1468,9 +1559,6 @@
 
         </div>
       `;
-
-      let gruzCount = 2;
-
 
       function createGruzHtml(index) {
         return `
@@ -1528,103 +1616,6 @@
       $('body').toggleClass('dark-theme', savedTheme);
       $('#flexSwitchCheckDefault').prop('checked', savedTheme);
 
-      const sections = [
-        {
-          id: 'quantity',
-          btnId: 'quantity_btn',
-          closeId: 'close_quantity',
-        },
-        {
-          id: 'dimensions',
-          btnId: 'dimensions_btn',
-          closeId: 'close_dimensions',
-        },
-        {
-          id: 'loading_time',
-          btnId: 'loading_time_btn',
-          closeId: 'close_loading_time',
-        },
-        {
-          id: 'date_time',
-          btnId: 'date_time_btn',
-          closeId: 'close_date_time',
-        },
-        {
-          id: 'num_cars',
-          btnId: 'num_cars_btn',
-          closeId: 'close_num_cars',
-        },
-        {
-          id: 'crew',
-          btnId: 'crew_btn',
-          closeId: 'close_crew',
-        },
-        {
-          id: 'adr',
-          btnId: 'adr_btn',
-          closeId: 'close_adr',
-        },
-        {
-          id: 'trailer_setup',
-          btnId: 'trailer_setup_btn',
-          closeId: 'close_trailer_setup',
-        },
-        {
-          id: 'tir',
-          btnId: 'tir_btn',
-          closeId: 'close_tir',
-        },
-        {
-          id: 'belts',
-          btnId: 'belts_btn',
-          closeId: 'close_belts',
-        },
-        {
-          id: 'capacity',
-          btnId: 'capacity_btn',
-          closeId: 'close_capacity',
-        },
-        {
-          id: 'predoplata',
-          btnId: 'predoplata_btn',
-          closeId: 'close_predoplata',
-        },
-        {
-          id: 'predoplata',
-          btnId: 'oplata_btn',
-          closeId: 'close_predoplata',
-        },
-        {
-          id: 'dogovor',
-          btnId: 'dogovor_btn',
-          closeId: 'close_dogovor',
-        },
-        {
-          id: 'num_gruz',
-          btnId: 'num_gruz_btn',
-          closeId: 'close_num_gruz',
-        },
-        {
-          id: 'foto_gruz',
-          btnId: 'foto_gruz_btn',
-          closeId: 'close_foto_gruz',
-        },
-        {
-          id: 'ptedlojenie',
-          btnId: 'ptedlojenie_btn',
-          closeId: 'close_ptedlojenie',
-        },
-        {
-          id: 'prodlrnie',
-          btnId: 'prodlrnie_btn',
-          closeId: 'close_prodlrnie',
-        },
-        {
-          id: 'stavka',
-          btnId: 'stavka_btn',
-          closeId: 'close_stavka',
-        }
-      ];
 
       sections.forEach((item) => $(`#${item.id}`).addClass('d-none'))
 
@@ -1663,16 +1654,21 @@
       })
 
       $('#dop_gruz_btn').click(function () {
-        console.log('Button clicked');
         gruzCount++;
         const newGruz = createGruzHtml(gruzCount);
         $('#second_dop_gruz').append(newGruz);
       })
 
+      $(document).on('click', '#close_load_dop_gruz', function () {
+        $('#gruz').removeClass('d-none')
+        $('#load_gruz').removeClass('d-none')
+        $('#load_dop_gruz_wrap').addClass('d-none');
+      })
+
       $(document).on('click', '.delete-gruz', function () {
         $(this).closest('[data-gruz-id]').remove();
-        $('#second_dop_gruz [data-gruz-id]').each(function(index) {
-          const newIndex = index + 2; 
+        $('#second_dop_gruz [data-gruz-id]').each(function (index) {
+          const newIndex = index + 2;
           $(this).attr('data-gruz-id', newIndex);
           $(this).find('h4').text(`Груз ${newIndex}`);
         });

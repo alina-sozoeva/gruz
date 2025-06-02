@@ -59,6 +59,10 @@ select {
   background-color: #0d1e2e;
 }
 
+.dark-theme .dop-gruz {
+  background-color: #0d3052;
+}
+
 /* Header Styles */
 .header {
   position: fixed;
@@ -339,6 +343,11 @@ select {
   background-color: #f9f9fa;
   border-radius: 4px;
   padding: 8px 16px;
+}
+
+.dop-gruz {
+  background-color: #e9f1fa;
+  padding: 15px 20px;
 }
 
 @media (min-width: 768px) {

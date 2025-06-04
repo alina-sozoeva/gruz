@@ -15,17 +15,16 @@ app.use(express.static(__dirname));
 
 // Маршрут
 app.get("/", function (req, res) {
-  res.render("index.hbs");
+  res.render("pages/index.hbs");
 });
 
 app.get("/add_gruz", function (req, res) {
-  res.render("add_gruz.hbs");
+  res.render("pages/add_gruz.hbs");
 });
 
 app.get("/archive", function (req, res) {
-  res.render("archive.hbs");
+  res.render("pages/archive.hbs");
 });
-
 
 app.listen(PORT, () => {
   console.log(`🔥 Сервер работает на http://localhost:${PORT}`);

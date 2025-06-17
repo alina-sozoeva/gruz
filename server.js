@@ -3,7 +3,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3002;
 
 // Подключаем шаблонизатор HBS
 app.set("view engine", "hbs");

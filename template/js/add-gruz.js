@@ -1,4 +1,20 @@
 $(document).ready(function () {
+  // jQuery селекторы для основных элементов интерфейса
+  const $body = $("body");
+  const $gruz = $("#gruz");
+  const $loadGruz = $("#load_gruz");
+  const $loadDopGruzWrap = $("#load_dop_gruz_wrap");
+  const $loadDopGruz = $("#load_dop_gruz");
+  const $zagruzkaGruz = $("#zagruzka_gruz");
+  const $razgruzkaGruz = $("#razgruzka_gruz");
+  const $proezdGruz = $("#proezd_gruz");
+  const $tamojnyaGruz = $("#tamojnya_gruz");
+
+  // Массив конфигурации секций для управления видимостью элементов
+  // Каждая секция содержит:
+  // id - идентификатор секции
+  // btnId - идентификатор кнопки, которая показывает секцию
+  // closeId - идентификатор кнопки, которая скрывает секцию
   const sections = [
     {
       id: "quantity",
@@ -116,22 +132,60 @@ $(document).ready(function () {
       closeId: "close_main_gruz_dimensions",
     },
     {
-      id: "next_gruz_quantity",
-      btnId: "next_gruz_quantity_btn",
-      closeId: "close_next_gruz_quantity",
+      id: "zagruzka_gruz_quantity",
+      btnId: "zagruzka_gruz_quantity_btn",
+      closeId: "close_zagruzka_gruz_quantity",
     },
     {
-      id: "next_gruz_dimensions",
-      btnId: "next_gruz_dimensions_btn",
-      closeId: "close_next_gruz_dimensions",
+      id: "zagruzka_gruz_dimensions",
+      btnId: "zagruzka_gruz_dimensions_btn",
+      closeId: "close_zagruzka_gruz_dimensions",
     },
     {
-      id: "dop_loading_time",
-      btnId: "dop_loading_time_btn",
-      closeId: "close_dop_loading_time",
+      id: "zagruzka_dop_gruz_quantity",
+      btnId: "zagruzka_dop_gruz_quantity_btn",
+      closeId: "close_zagruzka_dop_gruz_quantity",
+    },
+    {
+      id: "zagruzka_dop_gruz_dimensions",
+      btnId: "zagruzka_dop_gruz_dimensions_btn",
+      closeId: "close_zagruzka_dop_gruz_dimensions",
+    },
+    {
+      id: "razgruzka_gruz_quantity",
+      btnId: "razgruzka_gruz_quantity_btn",
+      closeId: "close_razgruzka_gruz_quantity",
+    },
+    {
+      id: "razgruzka_gruz_dimensions",
+      btnId: "razgruzka_gruz_dimensions_btn",
+      closeId: "close_razgruzka_gruz_dimensions",
+    },
+    {
+      id: "proezd_gruz_quantity",
+      btnId: "proezd_gruz_quantity_btn",
+      closeId: "close_proezd_gruz_quantity",
+    },
+    {
+      id: "proezd_gruz_dimensions",
+      btnId: "proezd_gruz_dimensions_btn",
+      closeId: "close_proezd_gruz_dimensions",
+    },
+    {
+      id: "tamojnya_gruz_quantity",
+      btnId: "tamojnya_gruz_quantity_btn",
+      closeId: "close_tamojnya_gruz_quantity",
+    },
+    {
+      id: "tamojnya_gruz_dimensions",
+      btnId: "tamojnya_gruz_dimensions_btn",
+      closeId: "close_tamojnya_gruz_dimensions",
     },
   ];
 
+  // Функция для генерации HTML формы загрузки
+  // title - заголовок формы
+  // isSecond - флаг, указывающий является ли это дополнительной загрузкой
   function zagruzFrom(title, isSecond = false) {
     return `<div class="d-flex justify-content-between">
       <div class="d-flex">
@@ -170,6 +224,8 @@ $(document).ready(function () {
     </div>`;
   }
 
+  // Функция для генерации HTML формы груза
+  // isSecond - флаг, указывающий является ли это дополнительным грузом
   function gruzHtml(isSecond = false) {
     return `
         <div class="d-flex align-items-center mb-2 gap-2">
@@ -201,6 +257,9 @@ $(document).ready(function () {
         </div>`;
   }
 
+  // Функция для генерации HTML секции упаковки и количества
+  // name - идентификатор секции
+  // close_name - идентификатор кнопки закрытия
   function gruzQuantityHtml(name, close_name) {
     return `
         <div class="d-none" id=${name}>
@@ -222,6 +281,9 @@ $(document).ready(function () {
         </div>`;
   }
 
+  // Функция для генерации HTML секции габаритов
+  // name - идентификатор секции
+  // close_name - идентификатор кнопки закрытия
   function gruzDimensionsHtml(name, close_name) {
     return `<div class="d-none" id=${name}>
           <div class="d-flex gap-2" style="font-size: 12px;">
@@ -267,6 +329,9 @@ $(document).ready(function () {
 `;
   }
 
+  // Функция для генерации HTML кнопок управления
+  // name_quantity - идентификатор кнопки упаковки и количества
+  // name_dimensions - идентификатор кнопки габаритов
   function btns(name_quantity, name_dimensions) {
     return `<div class='mt-3'>
         <button class="form-btn" id=${name_quantity}>
@@ -280,7 +345,8 @@ $(document).ready(function () {
       </div>`;
   }
 
-  // HTML шаблон для формы добавления груза
+  // HTML шаблоны для различных типов форм
+  // Каждый шаблон содержит структуру для определенного типа груза
   const htmlAddGruz = `
     <!-- Секция загрузки -->
     ${zagruzFrom("Загрузка")}
@@ -340,7 +406,6 @@ $(document).ready(function () {
       </div>   
     </div>`;
 
-  // HTML шаблон для формы добавления загрузки
   const htmlAddZagruzka = `
      <!-- Секция загрузки -->
     ${zagruzFrom("Загрузка")}
@@ -360,17 +425,22 @@ $(document).ready(function () {
         ${gruzHtml()}
 
         <!-- Секция упаковки и количества -->
-        ${gruzQuantityHtml("", "")}
+        ${gruzQuantityHtml(
+          "zagruzka_gruz_quantity",
+          "close_zagruzka_gruz_quantity"
+        )}
 
         <!-- Секция габаритов -->
-        ${gruzDimensionsHtml("", "")}
+        ${gruzDimensionsHtml(
+          "zagruzka_gruz_dimensions",
+          "close_zagruzka_gruz_dimensions"
+        )}
 
         <!-- Кнопки управления -->
-        ${btns("", "")}
+        ${btns("zagruzka_gruz_quantity_btn", "zagruzka_gruz_dimensions_btn")}
       </div>   
     </div>
 
-    
     <!-- Секция дополнительной загрузки -->
     ${zagruzFrom("Загрузка", true)}
 
@@ -388,17 +458,25 @@ $(document).ready(function () {
         ${gruzHtml(true)}
 
         <!-- Секция упаковки и количества -->
-        ${gruzQuantityHtml("", "")}
+        ${gruzQuantityHtml(
+          "zagruzka_dop_gruz_quantity",
+          "close_zagruzka_dop_gruz_quantity"
+        )}
 
         <!-- Секция габаритов -->
-        ${gruzDimensionsHtml("", "")}
+        ${gruzDimensionsHtml(
+          "zagruzka_dop_gruz_dimensions",
+          "close_zagruzka_dop_gruz_dimensions"
+        )}
 
         <!-- Кнопки управления -->
-        ${btns("", "")}
+        ${btns(
+          "zagruzka_dop_gruz_quantity_btn",
+          "zagruzka_dop_gruz_dimensions_btn"
+        )}
       </div>   
     </div>`;
 
-  // HTML шаблон для формы добавления разгрузки
   const htmlAddRazgruzka = `
     <!-- Секция загрузки -->
     ${zagruzFrom("Загрузка")}
@@ -418,25 +496,28 @@ $(document).ready(function () {
         ${gruzHtml()}
 
         <!-- Секция упаковки и количества -->
-        ${gruzQuantityHtml("main_gruz_quantity", "close_main_gruz_quantity")}
+        ${gruzQuantityHtml(
+          "razgruzka_gruz_quantity",
+          "close_razgruzka_gruz_quantity"
+        )}
 
         <!-- Секция габаритов -->
         ${gruzDimensionsHtml(
-          "main_gruz_dimensions",
-          "close_main_gruz_dimensions"
+          "razgruzka_gruz_dimensions",
+          "close_razgruzka_gruz_dimensions"
         )}
 
         <!-- Кнопки управления -->
-        ${btns("main_gruz_quantity_btn", "main_gruz_dimensions_btn")}
+        ${btns("razgruzka_gruz_quantity_btn", "razgruzka_gruz_dimensions_btn")}
       </div> 
     </div>
 
     <div class="mb-3" style="padding-left: 20%;">
-      <button class="form-btn" id="dop_loading_time_btn">
+      <button class="form-btn" id="">
         <i class="fa-solid fa-plus"></i>
         Время загрузки
       </button>
-      <button class="form-btn" id="dop_gruz_btn">
+      <button class="form-btn" id="">
         <i class="fa-solid fa-plus"></i>
         Еще груз
       </button>
@@ -444,34 +525,153 @@ $(document).ready(function () {
 
     <!-- Секция загрузки -->
     ${zagruzFrom("Разгрузка", true)}
-
   `;
 
-  // HTML шаблон для формы добавления томожни
-  const htmlAddTamoj = ``;
+  const htmlAddProezd = `
+      <!-- Секция загрузки -->
+    ${zagruzFrom("Загрузка")}
+
+    <!-- Секция основного груза -->
+    <div class="d-flex justify-content-between mb-3">
+      <div class="d-flex">
+        <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+        <h4 class="ms-2" style="width: 10%; font-size: 14px; white-space: nowrap;">
+          Груз
+        </h4>
+      </div>
+    
+      <!-- Форма ввода данных о грузе -->
+      <div style="width: 80%;" class="dop-gruz d-flex flex-column">
+        <!-- Основные параметры груза -->
+        ${gruzHtml()}
+
+        <!-- Секция упаковки и количества -->
+        ${gruzQuantityHtml(
+          "proezd_gruz_quantity",
+          "close_proezd_gruz_quantity"
+        )}
+
+        <!-- Секция габаритов -->
+        ${gruzDimensionsHtml(
+          "proezd_gruz_dimensions",
+          "close_proezd_gruz_dimensions"
+        )}
+
+        <!-- Кнопки управления -->
+        ${btns("proezd_gruz_quantity_btn", "proezd_gruz_dimensions_btn")}
+      </div> 
+    </div>
+
+    <div class="mb-3" style="padding-left: 20%;">
+      <button class="form-btn" id="">
+        <i class="fa-solid fa-plus"></i>
+        Время загрузки
+      </button>
+      <button class="form-btn" id="">
+        <i class="fa-solid fa-plus"></i>
+        Еще груз
+      </button>
+    </div>
+
+    <!-- Секция загрузки -->
+    ${zagruzFrom("Ехать через", true)}`;
+
+  const htmlAddTamojnya = `
+      <!-- Секция загрузки -->
+    ${zagruzFrom("Загрузка")}
+
+    <!-- Секция основного груза -->
+    <div class="d-flex justify-content-between mb-3">
+      <div class="d-flex">
+        <i class="fa-solid fa-star-of-life" style="color: red; font-size: 8px"></i>
+        <h4 class="ms-2" style="width: 10%; font-size: 14px; white-space: nowrap;">
+          Груз
+        </h4>
+      </div>
+    
+      <!-- Форма ввода данных о грузе -->
+      <div style="width: 80%;" class="dop-gruz d-flex flex-column">
+        <!-- Основные параметры груза -->
+        ${gruzHtml()}
+
+        <!-- Секция упаковки и количества -->
+        ${gruzQuantityHtml(
+          "tamojnya_gruz_quantity",
+          "close_tamojnya_gruz_quantity"
+        )}
+
+        <!-- Секция габаритов -->
+        ${gruzDimensionsHtml(
+          "tamojnya_gruz_dimensions",
+          "close_tamojnya_gruz_dimensions"
+        )}
+
+        <!-- Кнопки управления -->
+        ${btns("tamojnya_gruz_quantity_btn", "tamojnya_gruz_dimensions_btn")}
+      </div> 
+    </div>
+
+    <div class="mb-3" style="padding-left: 20%;">
+      <button class="form-btn" id="loading_time_btn">
+        <i class="fa-solid fa-plus"></i>
+        Время загрузки
+      </button>
+      <button class="form-btn" id="dop_gruz_quantity_btn">
+        <i class="fa-solid fa-plus"></i>
+        Еще груз
+      </button>
+    </div>
+
+    <!-- Секция загрузки -->
+    ${zagruzFrom("Таможня", true)}`;
+
+  // Вспомогательная функция для генерации HTML с сохранением ID
+  // prefix - префикс для идентификаторов
+  // isSecond - флаг для дополнительного груза
+  const generateGruzHtml = (prefix, isSecond = false) => {
+    return {
+      quantity: gruzQuantityHtml(
+        `${prefix}_quantity`,
+        `close_${prefix}_quantity`
+      ),
+      dimensions: gruzDimensionsHtml(
+        `${prefix}_dimensions`,
+        `close_${prefix}_dimensions`
+      ),
+      buttons: btns(`${prefix}_quantity_btn`, `${prefix}_dimensions_btn`),
+    };
+  };
+
+  // Оптимизированная работа с темной темой
+  const initDarkTheme = () => {
+    const $themeSwitch = $("#flexSwitchCheckDefault");
+    const savedTheme = localStorage.getItem("darkMode") === "true";
+
+    $themeSwitch.prop("checked", savedTheme);
+    $body.toggleClass("dark-theme", savedTheme);
+
+    $themeSwitch.on("change", function () {
+      const isDark = $(this).is(":checked");
+      $body.toggleClass("dark-theme", isDark);
+      localStorage.setItem("darkMode", isDark);
+    });
+  };
 
   // Инициализация темной темы
-  $("#flexSwitchCheckDefault").change(function () {
-    const isDark = $(this).is(":checked");
-    $("body").toggleClass("dark-theme", isDark);
-    localStorage.setItem("darkMode", isDark);
-  });
+  initDarkTheme();
 
-  // Загрузка сохраненной темы
-  const savedTheme = localStorage.getItem("darkMode") === "true";
-  $("body").toggleClass("dark-theme", savedTheme);
-  $("#flexSwitchCheckDefault").prop("checked", savedTheme);
-
-  // Скрытие всех секций при загрузке
+  // Скрытие всех секций при загрузке страницы
   sections.forEach((item) => $(`#${item.id}`).addClass("d-none"));
 
   // Обработчики для показа/скрытия секций
   sections.forEach((item) => {
+    // Показ секции при клике на кнопку
     $(document).on("click", `#${item.btnId}`, function () {
       $(this).addClass("d-none");
       $(`#${item.id}`).removeClass("d-none");
     });
 
+    // Скрытие секции при клике на кнопку закрытия
     $(document).on("click", `#${item.closeId}`, function () {
       $(`#${item.id}`).addClass("d-none");
       $(`#${item.btnId}`).removeClass("d-none");
@@ -479,12 +679,10 @@ $(document).ready(function () {
   });
 
   // Обработчики для кнопок предоплаты и оплаты
-  $("#predoplata_btn").click(function () {
-    $("#oplata_btn").addClass("d-none");
-  });
-
-  $("#oplata_btn").click(function () {
-    $("#predoplata_btn").addClass("d-none");
+  $("#predoplata_btn, #oplata_btn").click(function () {
+    const isPredoplata = $(this).attr("id") === "predoplata_btn";
+    $("#oplata_btn").toggleClass("d-none", isPredoplata);
+    $("#predoplata_btn").toggleClass("d-none", !isPredoplata);
   });
 
   // Инициализация активной кнопки торгов
@@ -496,122 +694,173 @@ $(document).ready(function () {
     $(this).addClass("bid_btn_active");
   });
 
-  // Обработчик для кнопки добавления груза
-  $("#gruz_btn").click(function () {
-    $("#gruz").addClass("d-none");
-    $("#load_dop_gruz_wrap").removeClass("d-none");
-    $("#load_gruz").addClass("d-none");
-    $("#zagruzka_gruz").addClass("d-none");
-    $("#razgruzka_gruz").addClass("d-none");
-    $("#zagruzka_gruz").addClass("d-none");
-    $("#load_dop_gruz").removeClass("d-none");
-    $("#load_dop_gruz").html(htmlAddGruz);
-  });
-
-  // Обработчик для кнопки добавления загрузки
-  $("#zagruzka_gruz_btn").click(function () {
-    $("#gruz").addClass("d-none");
-    $("#load_dop_gruz_wrap").removeClass("d-none");
-    $("#load_gruz").addClass("d-none");
-    $("#load_dop_gruz").addClass("d-none");
-    $("#razgruzka_gruz").addClass("d-none");
-    $("#zagruzka_gruz").removeClass("d-none");
-    $("#zagruzka_gruz").html(htmlAddZagruzka);
-  });
-
-  // Обработчик для кнопки добавления загрузки
-  $("#razgruzka_gruz_btn").click(function () {
-    $("#gruz").addClass("d-none");
-    $("#load_dop_gruz_wrap").removeClass("d-none");
-    $("#load_gruz").addClass("d-none");
-    $("#load_dop_gruz").addClass("d-none");
-    $("#zagruzka_gruz").addClass("d-none");
-    $("#razgruzka_gruz").removeClass("d-none");
-    $("#razgruzka_gruz").html(htmlAddRazgruzka);
-  });
-
-  // Обработчик для кнопки добавления дополнительного груза
-  // $("#dop_gruz_btn").click(function () {
-  //   gruzCount++;
-  //   const newGruz = createGruzHtml(gruzCount);
-  //   $("#second_dop_gruz").append(newGruz);
-  // });
-
-  // Обработчик для закрытия формы дополнительного груза
-  $(document).on("click", "#close_load_dop_gruz", function () {
-    $("#gruz").removeClass("d-none");
-    $("#load_gruz").removeClass("d-none");
-    $("#load_dop_gruz_wrap").addClass("d-none");
-  });
-
-  $(document).on("click", "#close_zagruzka_gruz", function () {
-    $("#gruz").removeClass("d-none");
-    $("#load_gruz").removeClass("d-none");
-    $("#load_dop_gruz_wrap").addClass("d-none");
-  });
-
-  // Обработчик для удаления дополнительного груза
-  $(document).on("click", ".delete-gruz", function () {
-    $(this).closest("[data-gruz-id]").remove();
-    $("#second_dop_gruz [data-gruz-id]").each(function (index) {
-      const newIndex = index + 2;
-      $(this).attr("data-gruz-id", newIndex);
-      $(this).find("h4").text(`Груз ${newIndex}`);
-    });
-    gruzCount = $("#second_dop_gruz [data-gruz-id]").length + 1;
-  });
-
-  // Обработчики для кнопок упаковки и габаритов дополнительных грузов
-  $(document).on("click", "[id^=next_gruz_quantity_btn_]", function () {
-    const index = $(this).attr("id").split("_").pop();
-    $(this).addClass("d-none");
-    $(`#next_gruz_quantity_${index}`).removeClass("d-none");
-  });
-
-  $(document).on("click", "[id^=next_gruz_dimensions_btn_]", function () {
-    const index = $(this).attr("id").split("_").pop();
-    $(this).addClass("d-none");
-    $(`#next_gruz_dimensions_${index}`).removeClass("d-none");
-  });
-
-  $(document).on("click", "[id^=close_next_gruz_quantity_]", function () {
-    const index = $(this).attr("id").split("_").pop();
-    $(`#next_gruz_quantity_${index}`).addClass("d-none");
-    $(`#next_gruz_quantity_btn_${index}`).removeClass("d-none");
-  });
-
-  $(document).on("click", "[id^=close_next_gruz_dimensions_]", function () {
-    const index = $(this).attr("id").split("_").pop();
-    $(`#next_gruz_dimensions_${index}`).addClass("d-none");
-    $(`#next_gruz_dimensions_btn_${index}`).removeClass("d-none");
-  });
-
-  // Функция для управления видимостью блоков
-  const showBlocks = (toShow = [], toHide = []) => {
-    toShow.forEach((id) => $(`#${id}`).removeClass("d-none"));
-    toHide.forEach((id) => $(`#${id}`).addClass("d-none"));
+  // Функция для управления видимостью элементов
+  // showIds - массив ID элементов для показа
+  // hideIds - массив ID элементов для скрытия
+  const toggleElements = (showIds, hideIds) => {
+    showIds.forEach((id) => $(`#${id}`).removeClass("d-none"));
+    hideIds.forEach((id) => $(`#${id}`).addClass("d-none"));
   };
 
+  // Обработчики для различных типов грузов
+  const cargoHandlers = {
+    // Обработчик для основного груза
+    gruz: () => {
+      const templates = generateGruzHtml("main_gruz");
+      toggleElements(
+        ["load_dop_gruz_wrap", "load_dop_gruz"],
+        [
+          "gruz",
+          "load_gruz",
+          "zagruzka_gruz",
+          "razgruzka_gruz",
+          "proezd_gruz",
+          "tamojnya_gruz",
+        ]
+      );
+      $loadDopGruz.html(htmlAddGruz);
+    },
+    // Обработчик для загрузки
+    zagruzka: () => {
+      toggleElements(
+        ["load_dop_gruz_wrap", "zagruzka_gruz"],
+        [
+          "gruz",
+          "load_gruz",
+          "load_dop_gruz",
+          "razgruzka_gruz",
+          "proezd_gruz",
+          "tamojnya_gruz",
+        ]
+      );
+      $zagruzkaGruz.html(htmlAddZagruzka);
+    },
+    // Обработчик для разгрузки
+    razgruzka: () => {
+      toggleElements(
+        ["load_dop_gruz_wrap", "razgruzka_gruz"],
+        [
+          "gruz",
+          "load_gruz",
+          "load_dop_gruz",
+          "zagruzka_gruz",
+          "proezd_gruz",
+          "tamojnya_gruz",
+        ]
+      );
+      $razgruzkaGruz.html(htmlAddRazgruzka);
+    },
+    // Обработчик для проезда
+    proezd: () => {
+      toggleElements(
+        ["load_dop_gruz_wrap", "proezd_gruz"],
+        [
+          "gruz",
+          "load_gruz",
+          "load_dop_gruz",
+          "zagruzka_gruz",
+          "razgruzka_gruz",
+          "tamojnya_gruz",
+        ]
+      );
+      $proezdGruz.html(htmlAddProezd);
+    },
+    // Обработчик для таможни
+    tamojnya: () => {
+      toggleElements(
+        ["load_dop_gruz_wrap", "tamojnya_gruz"],
+        [
+          "gruz",
+          "load_gruz",
+          "load_dop_gruz",
+          "zagruzka_gruz",
+          "razgruzka_gruz",
+          "proezd_gruz",
+        ]
+      );
+      $tamojnyaGruz.html(htmlAddTamojnya);
+    },
+  };
+
+  // Привязка обработчиков к кнопкам грузов
+  $("#gruz_btn").click(cargoHandlers.gruz);
+  $("#zagruzka_gruz_btn").click(cargoHandlers.zagruzka);
+  $("#razgruzka_gruz_btn").click(cargoHandlers.razgruzka);
+  $("#proezd_gruz_btn").click(cargoHandlers.proezd);
+  $("#tamojnya_gruz_btn").click(cargoHandlers.tamojnya);
+
+  // Обработчики закрытия форм
+  $(document).on(
+    "click",
+    "#close_load_dop_gruz, #close_zagruzka_gruz",
+    function () {
+      $gruz.removeClass("d-none");
+      $loadGruz.removeClass("d-none");
+      $loadDopGruzWrap.addClass("d-none");
+    }
+  );
+
+  // Обработчик удаления груза
+  $(document).on("click", ".delete-gruz", function () {
+    const $cargo = $(this).closest("[data-gruz-id]");
+    $cargo.remove();
+
+    // Обновление нумерации оставшихся грузов
+    $("#second_dop_gruz [data-gruz-id]").each(function (index) {
+      const newIndex = index + 2;
+      $(this)
+        .attr("data-gruz-id", newIndex)
+        .find("h4")
+        .text(`Груз ${newIndex}`);
+    });
+  });
+
+  // Обработчики для кнопок упаковки и габаритов
+  const handleQuantityDimensions = (type) => {
+    $(document).on(
+      "click",
+      `[id^=next_gruz_${type}_btn_], [id^=close_next_gruz_${type}_]`,
+      function () {
+        const index = $(this).attr("id").split("_").pop();
+        const isClose = $(this).attr("id").startsWith("close");
+
+        $(`#next_gruz_${type}_${index}`).toggleClass("d-none", isClose);
+        $(`#next_gruz_${type}_btn_${index}`).toggleClass("d-none", !isClose);
+      }
+    );
+  };
+
+  // Инициализация обработчиков для упаковки и габаритов
+  handleQuantityDimensions("quantity");
+  handleQuantityDimensions("dimensions");
+
   // Обработчики для кнопок торгов
-  $("#torg_btn").on("click", () => {
-    showBlocks(
-      ["torg", "torg_text", "torg_wrap"],
-      ["no_torg_text", "zapros_wrap", "torgi_wrap", "the_end_torg"]
-    );
-  });
+  const bidHandlers = {
+    torg: () =>
+      toggleElements(
+        ["torg", "torg_text", "torg_wrap"],
+        ["no_torg_text", "zapros_wrap", "torgi_wrap", "the_end_torg"]
+      ),
+    no_torg: () =>
+      toggleElements(
+        ["no_torg_text", "torg_wrap"],
+        ["torg", "torg_text", "zapros_wrap", "torgi_wrap", "the_end_torg"]
+      ),
+    zapros: () =>
+      toggleElements(
+        ["zapros_wrap"],
+        ["torg_wrap", "torgi_wrap", "the_end_torg"]
+      ),
+    torgi: () =>
+      toggleElements(
+        ["torgi_wrap", "the_end_torg"],
+        ["torg_wrap", "zapros_wrap"]
+      ),
+  };
 
-  $("#no_torg_btn").on("click", () => {
-    showBlocks(
-      ["no_torg_text", "torg_wrap"],
-      ["torg", "torg_text", "zapros_wrap", "torgi_wrap", "the_end_torg"]
-    );
-  });
-
-  $("#zapros_btn").on("click", () => {
-    showBlocks(["zapros_wrap"], ["torg_wrap", "torgi_wrap", "the_end_torg"]);
-  });
-
-  $("#torgi_btn").on("click", () => {
-    showBlocks(["torgi_wrap", "the_end_torg"], ["torg_wrap", "zapros_wrap"]);
-  });
+  // Привязка обработчиков торгов
+  $("#torg_btn").on("click", bidHandlers.torg);
+  $("#no_torg_btn").on("click", bidHandlers.no_torg);
+  $("#zapros_btn").on("click", bidHandlers.zapros);
+  $("#torgi_btn").on("click", bidHandlers.torgi);
 });
